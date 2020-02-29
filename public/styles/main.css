@@ -1,0 +1,14 @@
+body {
+	font-size: 14px;
+	background-color: #feebe6;
+	background-size: cover;
+}
+
+.index-btn {
+	border: 2px solid #fff;
+	background: none;	
+}
+
+div {
+	border: 1px crimson solid;
+}
