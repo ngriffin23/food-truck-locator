@@ -1,14 +1,49 @@
+/* ** GLOBAL STYLES  **  */
+
 body {
 	font-size: 14px;
-	background-color: #feebe6;
+	background-image: url(../images/city-map-vector.png);
 	background-size: cover;
+	font-family: 'Exo', Arial, sans-serif ;
+}
+
+main {
+	background-color: rgba(53,58,77,0.8);
+}
+
+div {
+	border: 1px crimson solid;
+	color: #fff;
+}
+
+/* ** INDEX/TITLE STYLES  **  */
+
+.title {
+	border: 1px crimson solid;
+	color: #fff;
+}
+
+/* ** INDEX/INPUT STYLES  **  */
+
+.index-input {
+	color: #fff;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 3px solid #fff;
+	border-left: 0;
+	border-radius: 3px;
+	border-color: #fff;
+	background: transparent;
+	font-family: 'Exo', Arial, sans-serif ;
+}
+
+.index-input::placeholder{
+	color: #fff;
 }
 
 .index-btn {
 	border: 2px solid #fff;
 	background: none;	
+	color: #fff;
 }
 
-div {
-	border: 1px crimson solid;
-}
