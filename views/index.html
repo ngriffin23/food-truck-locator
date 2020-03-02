@@ -3,55 +3,72 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Bite N Go</title>
-	<link rel="stylesheet" href="../public/styles/bulma.css">
-	<link rel="stylesheet" href="../public/styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles/bulma.css">
+	<link rel="stylesheet" href="/styles/main.css">
 	
 </head>
-<body> 
+<body>
 	<!-- Landing Page -->
+	<main>
 	<div class="columns is-centered">
 		<div class="column is-half has-text-centered">
 			<h2 class="title is-2">Want to keep track of your favorite food trucks?</h2>
-			<button class="button is-rounded index-btn">Sign Up</button>
+			<button class="button is-medium is-rounded index-btn">Sign Up</button>
 
 			<h3 class="title is-3">Have an account already?</h3>
-			<button class="button is-rounded index-btn">Sign In</button>
+			<button class="button is-medium is-rounded index-btn">Sign In</button>
 		</div>
 	</div>
 
 	<!-- Sign Up Section -->
 	<div class="columns is-centered">
-	<div class="column is-half has-text-centered">
-	<h2 class="title is-2">Sign Up</h2>
-	<div class="field">
-		<p class="control has-icons-left has-icons-right">
-		  <input class="input" type="email" placeholder="Email">
-		  <span class="icon is-small is-left">
-			<i class="fas fa-envelope"></i>
-		  </span>
-		  <span class="icon is-small is-right">
-			<i class="fas fa-check"></i>
-		  </span>
-		</p>
-	  </div>
-	  <div class="field">
-		<p class="control has-icons-left">
-		  <input class="input" type="password" placeholder="Password">
-		  <span class="icon is-small is-left">
-			<i class="fas fa-lock"></i>
-		  </span>
-		</p>
-	  </div>
-	  <div class="field">
-		<p class="control">
-		  <button class="button is-success">
-			Login
-		  </button>
-		</p>
-	  </div>
-	  </div>
+		<div class="column is-half has-text-centered">
+			<h2 class="title is-2">Sign Up</h2>
+			<div class="field">
+				<input class="input index-input" type="text" placeholder="Name (first & last)">		
+			</div>
+		<div class="field">
+			<input class="input index-input" type="email" placeholder="Email">
+		</div>
+		<div class="field">
+			<input class="input index-input" type="password" placeholder="Password">
+		</div>
+
+		<button class="button is-medium is-rounded index-btn">Login</button>
+
+		</div>
 	  </div>
 
+	<!-- Sign In Section -->
+	<div class="columns is-centered">
+		<div class="column is-half has-text-centered">
+		<h2 class="title is-2">Sign In</h2>
+		
+		<div class="field">
+			<p class="control has-icons-left has-icons-right">
+			  <input class="input index-input" type="email" placeholder="Email">
+			  <span class="icon is-small is-left">
+				<i class="fas fa-envelope"></i>
+			  </span>
+			  <span class="icon is-small is-right">
+				<i class="fas fa-check"></i>
+			  </span>
+			</p>
+		  </div>
+		  <div class="field">
+			<p class="control has-icons-left">
+			  <input class="input index-input" type="password" placeholder="Password">
+			  <span class="icon is-small is-left">
+				<i class="fas fa-lock"></i>
+			  </span>
+			</p>
+		  </div>
+			<button class="button is-medium is-rounded index-btn">Login</button>
 
+
+		  </div>
+		  </div>
+	</main>
 </body>
 </html>
