@@ -8,7 +8,7 @@ const index = (req, res) => {
     });
   };
 
-  const create = (req, res) => {
+const create = (req, res) => {
     req.body.user = '5e5d5aaa9ca91b67e4e22fca'; // Temp user association for testing
   
     // First create a Post, Then Associate it with a User
@@ -32,9 +32,43 @@ const index = (req, res) => {
     });
   };
 
+  const destroy = (req, res) => {
+    // Find The User the Post Is Embedded In
+    db.User.findById(req.params.userId, (err, foundUser) => {
+      if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  
+      // Mongoose id() method only works on arrays with embedded records
+      // It takes the id of the sub document you want to find, and returns the whole object
+      const postToDelete = foundUser.posts.id(req.params.postId);
+  
+      // If we do not find a record, do not continue past this point.
+      // Respond back appropriately
+      if (!postToDelete) {
+        return res.status(400).json({status: 400, error: 'Could not find post'});
+      }
+  
+      // If we make it past the "if" stattement above, we found the document to be deleted
+      // The remove method will delete that object from the array
+      postToDelete.remove();
+  
+      // By deleting the "postToDelete", we have altered the "foundUser" record
+      // Use the Mongoose save() method to save the altered "foundUser" record
+      foundUser.save((err, savedCity) => {
+        if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  
+        // Now we need to delete the original Post from the Post collection
+        db.Post.findByIdAndDelete(req.params.postId, (err, deletedPost) => {
+          if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+          res.json(deletedPost);
+        });
+      });
+    })
+  };
+
 
   module.exports = {
       index,
-      create
+      create,
+      destroy
   }
   
