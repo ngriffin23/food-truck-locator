@@ -49,7 +49,18 @@ db.User.deleteMany({}, (err, result) => {
 
     console.log(`Successfully deleted ${result.deletedCount} users.`);
 
-  // Create New Artists
+  
+  // Create New Posts
+  db.Post.create(posts, (err, newPosts) => {
+    if (err) {
+      console.log(err);
+      process.exit();
+    }
+    console.log(`Successfully created ${newPosts.length} posts.`);
+        process.exit();
+    });
+  
+    // Create New User
   db.User.create(users, (err, newUsers) => {
     if (err) {
       console.log(err);

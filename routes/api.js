@@ -12,9 +12,9 @@ router.post('/users', ctrl.users.create);
 
 // -------- Post Routes
 
-// router.get('/posts', ctrl.posts.index);
-// router.post('/cities/:cityId/posts', ctrl.posts.create);
-// router.delete('/cities/:cityId/posts/:postId', ctrl.posts.destroy);
+router.get('/posts', ctrl.posts.index);
+// router.post('/users/:userId/posts', ctrl.posts.create);
+// router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
 
