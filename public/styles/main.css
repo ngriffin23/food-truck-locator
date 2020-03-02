@@ -1,7 +1,7 @@
 /* ** GLOBAL STYLES  **  */
 html {
-	background-image: url(../images/city-map-vector.png);
-	background-size: contain;
+	background-image: url('https://static.vecteezy.com/system/resources/previews/000/151/264/non_2x/city-map-vector.png');
+	background-size: cover;
 	scroll-behavior: smooth;
 }
 
@@ -11,32 +11,26 @@ body {
 }
 
 section {
-	background-color: rgba(53,58,77,0.8);
-	border: 1px crimson solid;
-}
-
-div {
-	border: 1px chartreuse solid;
-	color: #fff;
+	background-color: rgba(53,58,77,0.9);
+/*	border: 1px crimson solid;*/
 }
 
 /* ** INDEX/TITLE STYLES  **  */
 .column {
 	border: 1px royalblue solid;
 }
-.title {
-	border: 1px crimson solid;
+
+.index-title{
+/*	border: 1px crimson solid;*/
 	color: #fff;
 }
 
+
 /* ** INDEX/INPUT STYLES  **  */
-.section{ 
+.index-section{ 
 	height: 100vh;
 }
 
-.is-half {
-	border: 1px fuchsia solid;
-}
 .index-input {
 	color: #fff;
 	border-top: 0;
@@ -45,7 +39,7 @@ div {
 	border-left: 0;
 	border-radius: 3px;
 	border-color: #fff;
-	background: transparent;
+	background: none;
 	font-family: 'Exo', Arial, sans-serif ;
 }
 
@@ -55,7 +49,11 @@ div {
 
 .index-btn {
 	border: 2px solid #fff;
-	background: none;	
+	background: none;
+	color: #fff;
+}
+
+.index-btn a:link, a:visited {
 	color: #fff;
 }
 
@@ -64,4 +62,40 @@ div {
 	color: crimson;
 	border: #fff;
 	cursor: pointer;
+}
+
+.index-btn a:hover {
+	color: crimson;
+	border: #fff;
+	cursor: pointer;
+}
+
+/* ** DASHBOARD STYLES  **  */
+.dash-nav {
+	background-color: rgba(53,58,77,0.9);
+}
+
+.dash-top {
+	padding: 5px;
+}
+
+.dash-top h3 {
+	color: #fff;
+}
+
+.dash-modal {
+	border-radius: 15px;
+	background-color: #fff;
+}
+
+
+/* * MEDIA QUERIES  **  */
+
+@media screen and (max-width: 980px) {
+ .section {	
+	 display: flex;
+	 justify-content: center;
+	 box-sizing: border-box;
+	align-items: center;
+	}
 }
