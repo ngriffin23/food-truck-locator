@@ -11,6 +11,6 @@ mongoose.connect(DB_URI, {
     .catch((err) => console.log(err));
   
     module.exports = {
-      // Class: require('./Post'),
-      // Student: require('./User')
+      User: require('./User'),
+      Post: require('./Post')
     }
