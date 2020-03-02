@@ -13,7 +13,7 @@ router.post('/users', ctrl.users.create);
 // -------- Post Routes
 
 router.get('/posts', ctrl.posts.index);
-// router.post('/users/:userId/posts', ctrl.posts.create);
+router.post('/users/:userId/posts', ctrl.posts.create);
 // router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
