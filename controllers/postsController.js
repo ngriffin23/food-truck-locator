@@ -47,7 +47,7 @@ const create = (req, res) => {
         return res.status(400).json({status: 400, error: 'Could not find post'});
       }
   
-      // If we make it past the "if" stattement above, we found the document to be deleted
+      // If we make it past the "if" statement above, we found the document to be deleted
       // The remove method will delete that object from the array
       postToDelete.remove();
   
