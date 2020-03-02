@@ -1,7 +1,7 @@
 /* ** GLOBAL STYLES  **  */
 html {
 	background-image: url('https://static.vecteezy.com/system/resources/previews/000/151/264/non_2x/city-map-vector.png');
-	background-size: contain;
+	background-size: cover;
 	scroll-behavior: smooth;
 }
 
@@ -19,6 +19,7 @@ section {
 .column {
 	border: 1px royalblue solid;
 }
+
 .index-title{
 /*	border: 1px crimson solid;*/
 	color: #fff;
@@ -26,7 +27,7 @@ section {
 
 
 /* ** INDEX/INPUT STYLES  **  */
-.section{ 
+.index-section{ 
 	height: 100vh;
 }
 
@@ -67,6 +68,24 @@ section {
 	color: crimson;
 	border: #fff;
 	cursor: pointer;
+}
+
+/* ** DASHBOARD STYLES  **  */
+.dash-nav {
+	background-color: rgba(53,58,77,0.9);
+}
+
+.dash-top {
+	padding: 5px;
+}
+
+.dash-top h3 {
+	color: #fff;
+}
+
+.dash-modal {
+	border-radius: 15px;
+	background-color: #fff;
 }
 
 
