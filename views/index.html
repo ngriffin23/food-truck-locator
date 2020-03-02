@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bite N Go</title>
 	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../public/styles/bulma.css">
-	<link rel="stylesheet" href="../public/styles/main.css">
+	<link rel="stylesheet" href="/styles/bulma.css">
+	<link rel="stylesheet" href="/styles/main.css">
 	
 </head>
 <body>
 	<!-- Landing Page -->
-	<section class="section is-large is-fluid is-centered" id="landing">
-		<div class="container ">
-			<div class="has-text-centered">
-				<h2 class="title is-2">Want to keep track of your favorite food trucks?</h2>
-				<button class="button is-medium is-rounded index-btn">Sign Up</button>
-
-				<h3 class="title is-3">Have an account already?</h3>
-				<button class="button is-medium is-rounded index-btn">Sign In</button>
+	<section class="section is-flex is-large is-centered index-section" id="landing">
+		<div class="container is-centered has-text-centered">
+			<div class="field">
+				<h2 class="title is-2 index-title">Want to keep track of your favorite food trucks?</h2>
+				<button class="button is-medium is-rounded index-btn"><a href="#sign-up">Sign Up</a></button>
+			</div>
+			<div class="field">
+				<h3 class="subtitle is-3 index-title">Have an account already?</h3>
+				<button class="button is-medium is-rounded index-btn"><a href="#sign-in">Sign In</a></button>
 			</div>
 		</div>
 	</section>
 
 	<!-- Sign Up Section -->
-	<section class="section is-large is-fluid is-centered" id="sign-up">
-		<div class="container has-text-centered ">
-			<h2 class="title is-2">Sign Up</h2>
+	<section class="section is-flex is-large is-centered index-section" id="sign-up">
+		<div class="container has-text-centered">
+			<h2 class="title is-2 index-title">Sign Up</h2>
 
 			<div class="field">
 				<input class="input index-input" type="text" placeholder="Name (first & last)">		
@@ -36,22 +38,22 @@
 			<div class="field">
 				<input class="input index-input" type="password" placeholder="Password">
 			</div>
-			<button class="button is-medium is-rounded index-btn">Login</button>
+			<button class="button is-medium is-rounded index-btn">Submit</button>
 		</div>
 	</section>
 
   <!--  Sign In Section -->
-  <section class="section is-large is-fluid is-centered" id="sign-in">
-	<div class="container has-text-centered ">
-		<h2 class="title is-2">Sign In</h2>
-		<div class="field">
-			<input class="input index-input" type="email" placeholder="Email">
+  	<section class="section is-large is-flex is-centered index-section" id="sign-in">
+		<div class="container has-text-centered ">
+			<h2 class="title is-2 index-title">Sign In</h2>
+			<div class="field">
+				<input class="input index-input" type="email" placeholder="Email">
+			</div>
+			<div class="field">
+				<input class="input index-input" type="password" placeholder="Password">
+			</div>
+			<button class="button is-medium is-rounded index-btn">Login</button>
 		</div>
-		<div class="field">
-			<input class="input index-input" type="password" placeholder="Password">
-		</div>
-		<button class="button is-medium is-rounded index-btn">Login</button>
-	</div>
-</section>
+	</section>
 </body>
 </html>
