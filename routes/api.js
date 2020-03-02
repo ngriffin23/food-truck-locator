@@ -7,7 +7,8 @@ const ctrl = require('../controllers');
 // -------- User Routes
 
 router.get('/users', ctrl.users.index);
-// router.post('/users', ctrl.users.create);
+router.get('/users/:id', ctrl.users.show);
+router.post('/users', ctrl.users.create);
 
 // -------- Post Routes
 

@@ -8,9 +8,9 @@ const users = [
         password: 'test1234'
     },
     {
-        firstName: 'Nicole',
-        lastName: 'Griffin',
-        email: 'nicole123@gmail.com',
+        firstName: 'Cat',
+        lastName: 'Carbonell',
+        email: 'cat123@gmail.com',
         password: 'test1234'
     }
 ];
