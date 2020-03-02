@@ -2,6 +2,7 @@
 html {
 	background-image: url(../images/city-map-vector.png);
 	background-size: contain;
+	scroll-behavior: smooth;
 }
 
 body {

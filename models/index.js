@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bite-n-go';
-
 mongoose.connect(DB_URI, {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -9,8 +8,8 @@ mongoose.connect(DB_URI, {
   })
     .then(() => console.log('MongoDB connected successfully.'))
     .catch((err) => console.log(err));
-  
+
     module.exports = {
-      // Class: require('./Post'),
-      // Student: require('./User')
+      User: require('./User'),
+      Post: require('./Post')
     }
