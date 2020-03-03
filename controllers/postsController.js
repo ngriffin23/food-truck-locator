@@ -8,6 +8,14 @@ const index = (req, res) => {
     });
   };
 
+  const show = (req, res) => {
+    db.Post.findById(req.params.id, (err, findPost) => {
+      if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
+  
+      res.json(findPost);
+    });
+  };
+
 const create = (req, res) => {
     req.body.user = '5e5d5aaa9ca91b67e4e22fca'; // Temp user association for testing
   
@@ -68,6 +76,7 @@ const create = (req, res) => {
 
   module.exports = {
       index,
+      show,
       create,
       destroy
   }

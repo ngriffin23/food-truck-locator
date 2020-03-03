@@ -11,6 +11,7 @@ router.post('/users', ctrl.users.create);
 
 // -------- Post Routes
 router.get('/posts', ctrl.posts.index);
+router.get('/posts/:id', ctrl.posts.show);
 router.post('/users/:userId/posts', ctrl.posts.create);
 router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
