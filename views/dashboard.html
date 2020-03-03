@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
+    <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/animate.css">
-	<link rel="stylesheet" href="/styles/bulma.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/styles/animate.css">
+	<link rel="stylesheet" href="../public/styles/bulma.css" />
+    <link rel="stylesheet" href="../public/styles/main.css" />
+
+    <!-- JS -->
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
+    <script defer src="../public/scripts/interaction.js"></script>
+
 </head>
 <body>
     <!-- DASHBOARD - MENU -->
@@ -28,32 +37,37 @@
         </div>
     </aside>
 
-    <!-- DASHBOARD - CREATE 
-    <section class="section is-overlay">
-        <input type="text" value="blep" />
-    </section>
-    -->
+    <!-- DASHBOARD - CREATE  -->
+    <div class="modal is-active" id="modal-create">
+        <div class="modal-background">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Create a Post</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body has-text-centered">
+                    <input class="input is-medium modal-input" type="upload" value="upload an image" />
+                    <button class="button is-medium upload-btn">Upload</button>
+                    <input class="input is-medium modal-input" type="text" value="Post Title" id="post-title" />
+                    <input class="input is-medium modal-input" type="text" value="Date" id="post-date" />
+                    <input class="input is-medium modal-input" type="text" value="Food Truck" id="post-truck" />
+                    <input class="input is-medium modal-input" type="text" value="Meal" id="post-meal" />
+                    <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success">Post</button>
+                    <button class="button">Cancel</button>
+                </footer>
+                
+            </div>
+        </div>
+    </div>
+ 
 
     <!-- DASHBOARD - UPDATE -->
 
     <!-- DASHBOARD - DELETE -->
 
-<script>
-    const menuOpen = document.querySelector('.dash-menu-open');
-    const menuClose = document.querySelector('.dash-menu-close');
-    const dashMenu = document.querySelector('.dash-menu');
-
-    menuOpen.addEventListener('click', function(e) {
-        e.preventDefault();
-        dashMenu.classList.remove('animated', 'slideOutLeft');
-        dashMenu.classList.add('animated', 'slideInLeft');
-        dashMenu.style.display = 'flex';
-    });
-
-    menuClose.addEventListener('click' , function(e){
-        dashMenu.classList.add('slideOutLeft');
-    });
-</script>
 
 </body>
 </html>

@@ -130,6 +130,31 @@ span.dash-menu-open {
 span.dash-menu-close{
 	transition: ease-in-out 0.3s;
 }
+/* * MODAL STYLES* */
+.modal-card {
+	margin: 0 auto;
+}
+.upload-btn {
+	color: #FF9665;
+	border: 2px solid #FF9665;
+	background: transparent;
+}
+.modal-input {
+	font-family: 'Exo', Arial, sans-serif ;
+	margin: 5px auto;
+	border-top: 1px solid  #fff;
+	border-right: 1px solid  #fff;
+	border-bottom:  2px solid #333;
+	border-left: 1px solid  #fff;
+}
+.modal-input::placeholder {
+	color: #333;
+	font-family: 'Exo', Arial, sans-serif ;
+}
+.modal-textarea {
+	border: 2px solid #333;
+	font-family: 'Exo', Arial, sans-serif ;
+}
 
 /* * MEDIA QUERIES  **  */
 
