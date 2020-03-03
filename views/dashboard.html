@@ -38,7 +38,7 @@
     </aside>
 
     <!-- DASHBOARD - CREATE  -->
-    <div class="modal is-active" id="modal-create">
+    <div class="modal is-hidden" id="modal-create">
         <div class="modal-background">
             <div class="modal-card">
                 <header class="modal-card-head">
@@ -46,8 +46,22 @@
                     <button class="delete" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body has-text-centered">
-                    <input class="input is-medium modal-input" type="upload" value="upload an image" />
-                    <button class="button is-medium upload-btn">Upload</button>
+                    <div class="file is-dark is-medium has-name">
+                        <label class="file-label">
+                          <input class="file-input" type="file" name="resume">
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                          <span class="file-name">
+                            Screen Shot 2017-07-29 at 15.54.25.png
+                          </span>
+                        </label>
+                      </div>
                     <input class="input is-medium modal-input" type="text" value="Post Title" id="post-title" />
                     <input class="input is-medium modal-input" type="text" value="Date" id="post-date" />
                     <input class="input is-medium modal-input" type="text" value="Food Truck" id="post-truck" />
@@ -57,8 +71,7 @@
                 <footer class="modal-card-foot">
                     <button class="button is-success">Post</button>
                     <button class="button">Cancel</button>
-                </footer>
-                
+                </footer> 
             </div>
         </div>
     </div>

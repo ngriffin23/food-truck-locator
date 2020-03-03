@@ -9,28 +9,22 @@ body {
 	font-size: 14px;
 	font-family: 'Exo', Arial, sans-serif ;
 }
-
 section {
 	background-color: rgba(53,58,77,0.9);
-/*	border: 1px crimson solid;*/
 }
 
 /* ** INDEX/TITLE STYLES  **  */
 .column {
 	border: 1px royalblue solid;
 }
-
 .index-title{
-/*	border: 1px crimson solid;*/
 	color: #fff;
 }
 
-
-/* ** INDEX/INPUT STYLES  **  */
+/* ** INDEX - INPUT STYLES  **  */
 .index-section{ 
 	height: 100vh;
 }
-
 .index-input {
 	color: #fff;
 	border-top: 0;
@@ -42,28 +36,23 @@ section {
 	background: none;
 	font-family: 'Exo', Arial, sans-serif ;
 }
-
 .index-input::placeholder{
 	color: #fff;
 }
-
 .index-btn {
 	border: 2px solid #fff;
 	background: none;
 	color: #fff;
 }
-
 .index-btn a:link, a:visited {
 	color: #fff;
 }
-
 .index-btn:hover {
 	background: rgba(255, 255, 255, 0.9);
 	color: crimson;
 	border: #fff;
 	cursor: pointer;
 }
-
 .index-btn a:hover {
 	color: crimson;
 	border: #fff;
@@ -77,16 +66,13 @@ section {
 	color: crimson;
 	height: 100vh;
 }
-
 .dash-menu h3, span {
 	color: #fff;
 }
-
 .dash-modal {
 	border-radius: 30px;
 	background-color: #fff;
 }
-
 .dash-btn {
 	width: 50%;
 	border: 2px solid #fff;
@@ -94,13 +80,11 @@ section {
 	color: #333;
 	margin: 10px auto;
 }
-
 span.dash-menu-open {
 	color: crimson;
 	font-weight: 900;
 	margin: 5px auto;
 }
-
  div.dash-menu-open {
 	margin: 10px; 
 	width: 75px;
@@ -109,7 +93,6 @@ span.dash-menu-open {
 	background: rgba(255, 255, 255, 0.7);
 	cursor: pointer;
  }
-
  div.dash-menu-open:hover {
 	background: rgba(53,58,77,0.7);
 	color: #fff;
@@ -117,7 +100,6 @@ span.dash-menu-open {
  span.dash-menu-open:hover {
 	color: #fff;
 }
-
  span:hover.dash-menu-close {
 	background-color: rgba(255, 255, 255, 0.7);
 	color: #333;
@@ -126,7 +108,6 @@ span.dash-menu-open {
 	cursor: pointer;
 	transition: ease-in-out 0.3s;
 }
-
 span.dash-menu-close{
 	transition: ease-in-out 0.3s;
 }
@@ -134,18 +115,23 @@ span.dash-menu-close{
 .modal-card {
 	margin: 0 auto;
 }
+
 .upload-btn {
 	color: #FF9665;
 	border: 2px solid #FF9665;
 	background: transparent;
 }
+
+
+/* * MODAL- INPUT STYLES* */
 .modal-input {
-	font-family: 'Exo', Arial, sans-serif ;
+	font-family: 'Exo', Arial, sans-serif;
+	color: #333;
 	margin: 5px auto;
-	border-top: 1px solid  #fff;
-	border-right: 1px solid  #fff;
+	border-top: 0 solid  #fff;
+	border-right: 0 solid  #fff;
 	border-bottom:  2px solid #333;
-	border-left: 1px solid  #fff;
+	border-left: 0 solid  #fff;
 }
 .modal-input::placeholder {
 	color: #333;
@@ -155,6 +141,8 @@ span.dash-menu-close{
 	border: 2px solid #333;
 	font-family: 'Exo', Arial, sans-serif ;
 }
+
+
 
 /* * MEDIA QUERIES  **  */
 

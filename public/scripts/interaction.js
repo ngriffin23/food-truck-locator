@@ -5,6 +5,7 @@ const menuOpen = document.querySelector('.dash-menu-open');
 const menuClose = document.querySelector('.dash-menu-close');
 const dashMenu = document.querySelector('.dash-menu');
 
+/* ** EVENT LISTENERS  ** */
 menuOpen.addEventListener('click', function(e) {
     e.preventDefault();
     dashMenu.classList.remove('animated', 'slideOutLeft');
@@ -13,6 +14,6 @@ menuOpen.addEventListener('click', function(e) {
 });
 
 menuClose.addEventListener('click' , function(e){
-    e.preventDefault();
-    dashMenu.classList.add('slideOutLeft');
+   e.preventDefault();
+    dashMenu.classList.add('animated', 'slideOutLeft');
 });
