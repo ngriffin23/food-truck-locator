@@ -71,20 +71,19 @@ section {
 }
 
 /* ** DASHBOARD STYLES  **  */
-.dash-nav {
-	background-color: rgba(53,58,77,0.9);
+.dash-menu {
+	display: none;
+	background-color: rgba(53,58,77,0.8);
+	color: crimson;
+	height: 100vh;
 }
 
-.dash-top {
-	padding: 5px;
-}
-
-.dash-top h3 {
+.dash-menu h3, span {
 	color: #fff;
 }
 
 .dash-modal {
-	border-radius: 15px;
+	border-radius: 30px;
 	background-color: #fff;
 }
 
@@ -92,13 +91,53 @@ section {
 .invalid-feedback {
 	color: crimson;
 }
+.dash-btn {
+	width: 50%;
+	border: 2px solid #fff;
+	background: #fff;
+	color: #333;
+	margin: 10px auto;
+}
+.fa-chevron-right {
+	color: crimson;
+	padding-left: 10px;
+}
+
+ div.dash-menu-toggle{
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+ }
+
+ div.dash-menu-toggle:hover {
+	 background: rgba(53,58,77,0.8);
+ } 
+
+
+ span:hover.dash-menu-visibile {
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #333;
+	width: 50%;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: ease-in-out 0.3s;
+}
+
+span.dash-menu-visibile{
+	transition: ease-in-out 0.3s;
+}
+
 /* * MEDIA QUERIES  **  */
 
-@media screen and (max-width: 980px) {
- .section {	
-	 display: flex;
-	 justify-content: center;
-	 box-sizing: border-box;
-	align-items: center;
+@media screen and (max-width: 960px) {
+	.section {	
+		display: flex;
+		justify-content: center;
+		box-sizing: border-box;
+	}
+	.dash-btn {
+		width: 100%;
 	}
 }
