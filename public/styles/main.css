@@ -73,7 +73,7 @@ section {
 /* ** DASHBOARD STYLES  **  */
 .dash-nav {
 	display: flex;
-	background-color: rgba(53,58,77,0.9);
+	background-color: rgba(53,58,77,1);
 	color: #fff;
 }
 
@@ -95,23 +95,28 @@ section {
 }
 
 /* * NAVBAR STYLES * */
-.dash-nav a:link a:visited {
+.dash-nav a:link, a:visited {
+	font-size: 1.7em;
 	color: #fff;
 }
 .dash-nav a:hover {
-	background: #fff;
+	text-decoration: underline;
+	color: #fff;
 }
 
 /* * MEDIA QUERIES  **  */
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 960px) {
 	.section {	
 		display: flex;
 		justify-content: center;
 		box-sizing: border-box;
-		}
-
+	}
 	.dash-btn {
 		width: 100%;
+	}
+	#dash-menu {
+		height: 100vh;
+		margin-top: 5%;
 	}
 }
