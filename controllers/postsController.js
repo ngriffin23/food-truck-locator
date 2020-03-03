@@ -35,25 +35,12 @@ const create = (req, res) => {
   };
 
   const update = (req, res) => {
-    db.User.findByIdAndUpdate(req.params.userId, (err, foundUser) => {
-      if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-      console.log()
-      const postToUpdate = foundUser.posts.id(req.params.postId);
-
-      if (!postToUpdate) {
-        return res.status(400).json({status: 400, error: 'Could not find post'});
-      };
-  
-      foundUser.save((err, savedUser) => {
-        if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-  
-        db.Post.findByIdAndUpdate(req.params.postId, (err, updatedPost) => {
-          if (err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-          res.json(updatedPost);
-        });
-      });
-    })
-  };
+console.log('Updating Post');
+  db.Post.findOneAndUpdate({_id:req.params.postId},req.body, (err, foundPost) => {
+    if(err) res.json(err);
+    res.json(foundPost);
+  });
+};
   
 
   const destroy = (req, res) => {

@@ -81,7 +81,7 @@ function handleSubmit(event) {
       .then((res) => {
         console.log(res);
         if (res) {
-          window.location = '/#signup';
+          window.location = '/dashboard';
         }
       })
       .catch((err) => console.log(err));
