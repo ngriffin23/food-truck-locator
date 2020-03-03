@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/animate.css">
-	<link rel="stylesheet" href="/styles/bulma.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="../public/styles/animate.css">
+	<link rel="stylesheet" href="../public/styles/bulma.css" />
+    <link rel="stylesheet" href="../public/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -41,21 +41,24 @@ const dashMenu = document.querySelector('.dash-menu');
 const menuClose = document.querySelector('.dash-menu-visibile');
 
 menuToggle.addEventListener('click', function () {
-    dashMenu.classList.remove('animated', 'slideOutRight');
-    menuToggle.classList.remove('animated', 'slideInLeft');
+    dashMenu.classList.remove('animated', 'slideInRight');
     dashMenu.classList.add('animated', 'slideInLeft');
     dashMenu.style.display = 'flex';
+    dashMenu.classList.remove('animated', 'slideOutLeft');
     menuToggle.classList.add('animated','slideOutRight');
     menuToggle.style.display = 'none';
+    
 });
 
 menuClose.addEventListener('click', function () {
-    dashMenu.classList.remove('animated', 'slideInLeft');
     menuToggle.classList.remove('animated','slideOutRight');
-    dashMenu.classList.add('animated', 'slideOutRight');
-    menuToggle.classList.add('animated', 'slideInLeft');
-    dashMenu.style.display = 'none';
+    menuToggle.classList.add('animated', 'slideInRight');
     menuToggle.style.display = 'flex';
+
+    dashMenu.classList.remove('animated', 'slideInLeft');
+    dashMenu.classList.add('animated', 'slideOutLeft');
+    dashMenu.style.display = 'none';
+
 });
 </script>
 
