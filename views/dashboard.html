@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bite 'N Go - Welcome, USER!</title>
+    <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/styles/bulma.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <!-- DASHBOARD Landing -->
-	<nav class="navbar is-flex dash-nav" role="navigation" id="landing">
-        <div class="dash-top">
-            <h3 class="title is-3">Hello, {FIRSTNAME}!</h3>
+     <!-- DASHBOARD - NAVBAR -->
+	<nav class="navbar is-fixed-top  dash-nav" role="navigation" aria-label="dropdown navigation">
+        <div class="navbar-start dash-top">
+            <h3 class="navbar-item title is-3">Hello, {FIRSTNAME}!</h3>
         </div>
-        <div class="navbar-end" id="dash-menu">
-            <span class="icon is-large">
-                <i class="fas fa-bars"></i>
-            </span>
+        <div class="navbar-item navbar-end">
+                <a class="dash-nav menu-btn">Menu</a>
         </div>
-	</nav>
+    </nav>
+    <!-- DASHBOARD - MENU -->
+    <section class="section is-block is-large is-centered index-section">
+        <div class="container is-centered">
+            <a class="navbar-item button is-medium is-rounded dash-btn">Find Food Truck</a>
+            <a class="navbar-item button is-medium is-rounded dash-btn">Create Posts</a>
+            <a class="navbar-item button is-medium is-rounded dash-btn">View Posts</a>
+            <a class="navbar-item button is-medium is-rounded dash-btn">Edit a Post</a>
+            <a class="navbar-item button is-medium is-rounded dash-btn">Settings</a>
+        </div>
+    </section>
+
 </body>
 </html>

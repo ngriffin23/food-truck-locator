@@ -72,14 +72,12 @@ section {
 
 /* ** DASHBOARD STYLES  **  */
 .dash-nav {
+	display: flex;
 	background-color: rgba(53,58,77,0.9);
+	color: #fff;
 }
 
-.dash-top {
-	padding: 5px;
-}
-
-.dash-top h3 {
+.dash-nav h3, span {
 	color: #fff;
 }
 
@@ -88,17 +86,32 @@ section {
 	background-color: #fff;
 }
 
-#dash-menu {
+.dash-btn {
+	width: 50%;
+	border: 2px solid #fff;
+	background: #fff;
+	color: #333;
+	margin: 10px auto;
+}
+
+/* * NAVBAR STYLES * */
+.dash-nav a:link a:visited {
 	color: #fff;
+}
+.dash-nav a:hover {
+	background: #fff;
 }
 
 /* * MEDIA QUERIES  **  */
 
-@media screen and (max-width: 980px) {
- .section {	
-	 display: flex;
-	 justify-content: center;
-	 box-sizing: border-box;
-	align-items: center;
+@media screen and (max-width: 1090px) {
+	.section {	
+		display: flex;
+		justify-content: center;
+		box-sizing: border-box;
+		}
+
+	.dash-btn {
+		width: 100%;
 	}
 }
