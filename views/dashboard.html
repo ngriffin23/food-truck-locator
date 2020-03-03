@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/styles/animate.css">
-	<link rel="stylesheet" href="../public/styles/bulma.css" />
-    <link rel="stylesheet" href="../public/styles/main.css" />
+    <link rel="stylesheet" href="/styles/animate.css">
+	<link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
     <!-- DASHBOARD - MENU -->
-    <div class="dash-menu-toggle is-centered">
-        <span class="icon is-large"><i class="fas fa-2x fa-chevron-right"></i></span>
+    <div class="dash-menu-open is-centered has-text-centered">
+        <span class="dash-menu-open is-centered">Menu</span>
     </div>
     <aside class="menu section is-overlay is-medium is-centered has-text-centered dash-menu">
         <div class="container">
@@ -25,41 +24,35 @@
             <a class="button is-medium is-rounded dash-btn">View Posts</a>
             <a class="button is-medium is-rounded dash-btn">Edit a Post</a>
             <a class="button is-medium is-rounded dash-btn">Settings</a><br />
-            <span class="icon is-large dash-menu-visibile"><i class="fas fa-2x fa-chevron-left"></i></span>
+            <span class="icon is-large dash-menu-close"><i class="fas fa-2x fa-chevron-left"></i></span>
         </div>
     </aside>
 
-    <!-- DASHBOARD - CREATE -->
+    <!-- DASHBOARD - CREATE 
+    <section class="section is-overlay">
+        <input type="text" value="blep" />
+    </section>
+    -->
 
     <!-- DASHBOARD - UPDATE -->
 
-     <!-- DASHBOARD - DELETE -->
+    <!-- DASHBOARD - DELETE -->
 
 <script>
-const menuToggle = document.querySelector('.dash-menu-toggle');
-const dashMenu = document.querySelector('.dash-menu');
-const menuClose = document.querySelector('.dash-menu-visibile');
+    const menuOpen = document.querySelector('.dash-menu-open');
+    const menuClose = document.querySelector('.dash-menu-close');
+    const dashMenu = document.querySelector('.dash-menu');
 
-menuToggle.addEventListener('click', function () {
-    dashMenu.classList.remove('animated', 'slideInRight');
-    dashMenu.classList.add('animated', 'slideInLeft');
-    dashMenu.style.display = 'flex';
-    dashMenu.classList.remove('animated', 'slideOutLeft');
-    menuToggle.classList.add('animated','slideOutRight');
-    menuToggle.style.display = 'none';
-    
-});
+    menuOpen.addEventListener('click', function(e) {
+        e.preventDefault();
+        dashMenu.classList.remove('animated', 'slideOutLeft');
+        dashMenu.classList.add('animated', 'slideInLeft');
+        dashMenu.style.display = 'flex';
+    });
 
-menuClose.addEventListener('click', function () {
-    menuToggle.classList.remove('animated','slideOutRight');
-    menuToggle.classList.add('animated', 'slideInRight');
-    menuToggle.style.display = 'flex';
-
-    dashMenu.classList.remove('animated', 'slideInLeft');
-    dashMenu.classList.add('animated', 'slideOutLeft');
-    dashMenu.style.display = 'none';
-
-});
+    menuClose.addEventListener('click' , function(e){
+        dashMenu.classList.add('slideOutLeft');
+    });
 </script>
 
 </body>
