@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="/styles/bulma.css">
 	<link rel="stylesheet" href="/styles/main.css">
 	
+	<!-- New User JS -->
+	<script defer src="/scripts/usersNew.js"></script>
+	
 </head>
 <body>
 	<!-- Landing Page -->
@@ -28,21 +31,22 @@
 	<section class="section is-flex is-large is-centered index-section" id="sign-up">
 		<div class="container has-text-centered">
 			<h2 class="title is-2 index-title">Sign Up</h2>
-
+			<form id="new-form">
 			<div class="field">
-				<input class="input index-input" type="text" placeholder="First Name">		
+				<input id="first" class="input index-input" type="text" placeholder="First Name">		
 			</div>
 			<div class="field">
-				<input class="input index-input" type="text" placeholder="Last Name">		
+				<input id="last" class="input index-input" type="text" placeholder="Last Name">		
 			</div>
 			<div class="field">
-				<input class="input index-input" type="email" placeholder="Email">
+				<input id="email" class="input index-input" type="email" placeholder="Email">
 			</div>
 			<div class="field">
-				<input class="input index-input" type="password" placeholder="Password">
+				<input id="password" class="input index-input" type="password" placeholder="Password">
 			</div>
-			<button class="button is-medium is-rounded index-btn">Submit</button>
-		</div>
+			<button type="submit" class="button is-medium is-rounded index-btn">Submit</button>
+			</form>
+			</div>
 	</section>
 
   <!--  Sign In Section -->
@@ -55,7 +59,7 @@
 			<div class="field">
 				<input class="input index-input" type="password" placeholder="Password">
 			</div>
-			<button class="button is-medium is-rounded index-btn">Login</button>
+			<button type="submit" class="button is-medium is-rounded index-btn">Login</button>
 		</div>
 	</section>
 </body>

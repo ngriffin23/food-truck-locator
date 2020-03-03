@@ -88,7 +88,10 @@ section {
 	background-color: #fff;
 }
 
-
+/* * VALIDATION * */
+.invalid-feedback {
+	color: crimson;
+}
 /* * MEDIA QUERIES  **  */
 
 @media screen and (max-width: 980px) {
