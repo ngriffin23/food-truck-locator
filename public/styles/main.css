@@ -1,6 +1,6 @@
 /* ** GLOBAL STYLES  **  */
 html {
-	background-image: url('https://static.vecteezy.com/system/resources/previews/000/151/264/non_2x/city-map-vector.png');
+	background-image: url('https://i.imgur.com/n2sUAE4.png');
 	background-size: cover;
 	scroll-behavior: smooth;
 }
@@ -73,6 +73,11 @@ section {
 	border-radius: 30px;
 	background-color: #fff;
 }
+
+/* * VALIDATION * */
+.invalid-feedback {
+	color: crimson;
+}
 .dash-btn {
 	width: 50%;
 	border: 2px solid #fff;
@@ -125,6 +130,9 @@ span.dash-menu-close{
 	border: 2px solid #FF9665;
 	background: transparent;
 }
+#modal-update{
+	z-index: 777;
+}
 #modal-delete{
 	z-index: 999;
 	background-color: rgba(255, 255, 255, 0.7);
@@ -149,17 +157,40 @@ span.dash-menu-close{
 	font-family: 'Exo', Arial, sans-serif ;
 }
 /* * POST STYLES ** */
+.post-content {
+	background-color: rgba(53,58,77,0.8);
+}
 .post-card {
-	margin-top: 2%;
+	margin-top: 10px;
 	width: 50%;
 	border: 2px solid #333;
-	padding: 5px;
 }
-.post-image {
-	width: 90%;
-	margin: 5px auto;
-	border: 2px solid #333;
-	border-radius: 10px;
+.post-style {
+	margin: 0;
+	padding: 15px 0 0 15px;
+}
+
+.post-style span {
+	color: #333;
+}
+.post-footer {
+	display: flex;
+	justify-content: flex-end;
+	border: 0;
+	padding: 5px 2px;
+}
+.post-btn {
+	font-size: 18px;
+	margin: 2px;
+	border: 0;
+}
+.post-btn span {
+	color: #333;
+	border: 0;
+}
+.post-btn span:hover{
+	color: #e41a10;
+	cursor: pointer;
 }
 
 /* * MEDIA QUERIES  **  */
@@ -177,10 +208,14 @@ span.dash-menu-close{
 	.modal-card {
 		margin: 0 auto;
 	}
-	
-	.post-card {
-		width: 100%;
+	.modal-content {
 		margin: 0;
-		padding: 0;
+	}
+	.post-card {
+		width: 90%;
+		margin: 4% auto;
+	}
+	.post-style{
+		padding: 15px;
 	}
 }

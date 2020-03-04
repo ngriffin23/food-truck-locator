@@ -5,15 +5,16 @@ const ctrl = require('../controllers');
 // Path starts at 'api/v1'
 
 // -------- User Routes
-
 router.get('/users', ctrl.users.index);
-// router.post('/users', ctrl.users.create);
+router.get('/users/:id', ctrl.users.show);
+router.post('/users', ctrl.users.create);
 
 // -------- Post Routes
-
-// router.get('/posts', ctrl.posts.index);
-// router.post('/cities/:cityId/posts', ctrl.posts.create);
-// router.delete('/cities/:cityId/posts/:postId', ctrl.posts.destroy);
+router.get('/posts', ctrl.posts.index);
+router.get('/posts/:id', ctrl.posts.show);
+router.post('/users/:userId/posts', ctrl.posts.create);
+// router.put('/users/:userId/posts/:postId', ctrl.posts.update);
+router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
 

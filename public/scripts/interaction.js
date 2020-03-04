@@ -2,8 +2,11 @@
 // GENERAL MULTIPLE ELEMENT/CLASS SELECTOR //
 const anchors = document.querySelectorAll('a');
 const dashBtnArr = document.querySelectorAll('.dash-btn');
-const modalArr = document.querySelectorAll('.modal'); 
+const modalArr = document.querySelectorAll('.modal');
+const openArr = document.querySelectorAll('.open-this');
 const closeIconArr =  document.querySelectorAll('.close-icon');
+const updateArr = document.querySelectorAll('.update-close');
+
 // MENU OPEN/CLOSE //
 const menuOpen = document.querySelector('.dash-menu-open');
 const menuClose = document.querySelector('.dash-menu-close');
@@ -48,38 +51,75 @@ findFoodTruck.addEventListener('click', function(e){
 
 /* ======= ======= ======= ======= ======= ======= ======= */
 
+// function openModal(modalId){
+//     openArr.forEach(function(thisModal){
+//         console.log(thisModal.id)
+//          thisModal.addEventListener('click', function(e){
+//             modalId.classList.add('fadeIn');
+//             modalId.classList.remove('fadeOut');
+//              e.stopPropagation();
+//              e.cancelBubble;
+//          });
+//      });
+//  };
+
+//  openArr.forEach(function(thisModalId){
+//     thisModalId.addEventListener('click', function(){
+//         switch (thisModalId.id) {
+//             case 'open-create':  
+//                 openModal(modalCreate);
+//                 break;
+//             case 'open-view':
+//                 openModal(modalView);
+//                 break;
+//             case 'open-settings':
+//                 openModal(modalSettings);
+//                 break;
+//             default:
+//                 console.log('waiting...');
+//             }        
+//      });
+//  });
+
+
 // MODALS - DELETE - OPEN //
 openDelete.addEventListener('click', function(e){
-    e.stopPropagation();
+    console.log(e)
     modalDelete.classList.add('fadeIn');
     modalDelete.classList.remove('fadeOut');
     modalDelete.style.display = 'initial';
+    e.stopPropagation();
 });
 // MODALS - CREATE -  OPEN //
 openCreate.addEventListener('click', function(e){
+    console.log(e);
     modalCreate.classList.add('slideInUp');
     modalCreate.classList.remove('slideOutDown');
     modalCreate.style.display = 'initial';
     e.stopPropagation();
 });
 // MODALS - SETTINGS - OPEN //
-openSettings.addEventListener('click', function(){
+openSettings.addEventListener('click', function(e){
     modalSettings.classList.add('slideInUp');
     modalSettings.classList.remove('slideOutDown');
     modalSettings.style.display = 'initial';
+    e.stopPropagation();
 });
 // MODALS - VIEW POSTS - OPEN //
-openView.addEventListener('click', function(){
+openView.addEventListener('click', function(e){
+    console.log(e)
     modalView.classList.add('slideInUp');
     modalView.classList.remove('slideOutDown');
     modalView.style.display = 'initial';
+    e.stopPropagation();
 });
 // MODALS - EDIT/UPDATE - OPEN //
-/*openUpdate.addEventListener('click', function(){
+openUpdate.addEventListener('click', function(e){
+    console.log(e)
     modalUpdate.classList.add('slideInUp');
     modalUpdate.classList.remove('slideOutDown');
     modalUpdate.style.display = 'initial';
-});*/
+});
 
 /* ======= ======= ======= ======= ======= ======= ======= */
 
@@ -88,22 +128,26 @@ function closeModal(modalId){
    closeIconArr.forEach(function(thisModal){
         thisModal.addEventListener('click', function(e){
             modalId.classList.add('slideOutDown');
-            e.stopPropagation();
-            e.cancelBubble;
         });
     });
 };
 
 dashBtnArr.forEach(function(thisModalId){
-    thisModalId.addEventListener('click', function(){
+    thisModalId.addEventListener('click', function(e){
         switch (thisModalId.id) {
-            case 'open-create':  
+            case 'open-create':
+                console.log(e)
+                console.log(thisModalId.id)
                 closeModal(modalCreate);
                 break;
             case 'open-view':
+                console.log(e)
+                console.log(thisModalId.id)
                 closeModal(modalView);
                 break;
             case 'open-settings':
+                console.log(e)
+                console.log(thisModalId.id)
                 closeModal(modalSettings);
                 break;
             default:
@@ -112,7 +156,15 @@ dashBtnArr.forEach(function(thisModalId){
      });
  });
 
-// CLOSE DELETE POST WARNING
+
+ // Handler for Update View
+ updateArr.forEach(function(thisModal){
+     thisModal.addEventListener('click', function(e){
+         modalUpdate.classList.add('slideOutDown');
+     });
+ });
+ 
+ // CLOSE DELETE POST WARNING
  deleteCancel.addEventListener('click', function(){
-    closeModal(modalDelete);
+    modalDelete.classList.add('slideOutDown');
  });
