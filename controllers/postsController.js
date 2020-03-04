@@ -30,17 +30,7 @@ const create = (req, res) => {
           res.json(newPost);
         });
   
-      });
-    });
-  };
-
-  const update = (req, res) => {
-console.log('Updating Post');
-  db.Post.findOneAndUpdate({_id:req.params.postId},req.body, (err, foundPost) => {
-    if(err) res.json(err);
-    res.json(foundPost);
-  });
-};
+      
   
 
   const destroy = (req, res) => {
@@ -70,7 +60,6 @@ console.log('Updating Post');
       index,
       show,
       create,
-      update,
       destroy
   }
   

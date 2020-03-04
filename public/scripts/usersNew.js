@@ -1,19 +1,17 @@
 const form = document.querySelector('#new-form');
-console.log(form);
 form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-    console.log('beep')
     let formIsValid = false;
 
-//   // Select Inputs
+  // Select Inputs
   const firstName = document.getElementById('first');
   const lastName = document.getElementById('last');
   const email = document.getElementById('email');
   const password = document.getElementById('password');
 
-//   // Select Error Messages
+ // Select Error Messages
   const firstNameFeedback = document.querySelector('.firstName-feedback');
   const lastNameFeedback = document.querySelector('.lastName-feedback');
   const emailFeedback = document.querySelector('.email-feedback');

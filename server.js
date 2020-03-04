@@ -21,9 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
     const url = req.url;
     const method = req.method;
-
-    // Destructuring
-    // const { url, method } = req;
     const requestedAt = new Date().toLocaleTimeString();
     const result = `${method} ${url} ${requestedAt}`;
     console.log(result);

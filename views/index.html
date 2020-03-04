@@ -10,6 +10,7 @@
 	
 	<!-- New User JS -->
 	<script defer src="/scripts/usersNew.js"></script>
+	<script defer src="/scripts/userShow.js"></script>
 	
 </head>
 <body>
@@ -53,13 +54,15 @@
   	<section class="section is-large is-flex is-centered index-section" id="sign-in">
 		<div class="container has-text-centered ">
 			<h2 class="title is-2 index-title">Sign In</h2>
+			<form id="new-form2">
 			<div class="field">
-				<input class="input index-input" type="email" placeholder="Email">
+				<input id="email2" class="input index-input" type="email" placeholder="Email">
 			</div>
 			<div class="field">
-				<input class="input index-input" type="password" placeholder="Password">
+				<input id="password2" class="input index-input" type="password" placeholder="Password">
 			</div>
 			<button type="submit" class="button is-medium is-rounded index-btn">Login</button>
+		</form>
 		</div>
 	</section>
 </body>
