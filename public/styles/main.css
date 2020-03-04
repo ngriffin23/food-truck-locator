@@ -150,6 +150,13 @@ span.dash-menu-close{
 	border: 2px solid #333;
 	font-family: 'Exo', Arial, sans-serif ;
 }
+/* * POST STYLES ** */
+.post-image {
+	width: 75%;
+	margin: 0 auto;
+	display: block;
+}
+
 /* * MEDIA QUERIES  **  */
 @media screen and (max-width: 960px) {
 	.section {	

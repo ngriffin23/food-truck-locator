@@ -113,6 +113,6 @@ dashBtnArr.forEach(function(thisModalId){
  });
 
 // CLOSE DELETE POST WARNING
- deleteCancel.addEventListener('click', function(e){
+ deleteCancel.addEventListener('click', function(){
     closeModal(modalDelete);
  })
