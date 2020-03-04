@@ -35,7 +35,7 @@ postForm.addEventListener('submit', (event) => {
     if (!title.value) {
       formIsValid = false;
       title.classList.add('is-invalid');
-      title.parentNode.insertAdjacentHTML('beforeend', '<div class="invalid-feedback title-feedback">Content is required</div>');
+      title.parentNode.insertAdjacentHTML('beforeend', '<div class="invalid-feedback title-feedback">Post Title is required</div>');
     } else {
       formIsValid = true;
       title.classList.add('is-valid');
