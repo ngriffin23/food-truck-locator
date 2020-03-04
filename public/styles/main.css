@@ -119,10 +119,7 @@ span.dash-menu-close{
 .modal-card {
 	margin: 7% auto;
 }
-#modal-view {
-	background-color: rgba(255, 255, 255, 0.7);
-	background-size: stretch;
-}
+
 .upload-btn {
 	color: #FF9665;
 	border: 2px solid #FF9665;
@@ -132,6 +129,7 @@ span.dash-menu-close{
 	z-index: 999;
 	background-color: rgba(255, 255, 255, 0.7);
 }
+
 /* * MODAL- INPUT STYLES* */
 .modal-input {
 	font-family: 'Exo', Arial, sans-serif;
@@ -151,10 +149,17 @@ span.dash-menu-close{
 	font-family: 'Exo', Arial, sans-serif ;
 }
 /* * POST STYLES ** */
+.post-card {
+	margin-top: 2%;
+	width: 50%;
+	border: 2px solid #333;
+	padding: 5px;
+}
 .post-image {
-	width: 75%;
-	margin: 0 auto;
-	display: block;
+	width: 90%;
+	margin: 5px auto;
+	border: 2px solid #333;
+	border-radius: 10px;
 }
 
 /* * MEDIA QUERIES  **  */
@@ -171,5 +176,11 @@ span.dash-menu-close{
 @media screen and (max-width: 460px) {
 	.modal-card {
 		margin: 0 auto;
+	}
+	
+	.post-card {
+		width: 100%;
+		margin: 0;
+		padding: 0;
 	}
 }
