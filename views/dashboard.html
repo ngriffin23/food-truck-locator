@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
     <script defer src="/scripts/interaction.js"></script>
+    <script defer src="/scripts/userProfile.js"></script>
 
 </head>
 <body>
@@ -48,13 +49,14 @@
     <div class="modal animated" id="modal-create">
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Create a Post</p>
+                    <p id="newPostModal" class="modal-card-title">Create a Post</p>
                     <button class="delete close-icon close-modal" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body has-text-centered">
                     <div class="file is-dark is-medium has-name">
+                        <form id="newPost">
                         <label class="file-label">
-                          <input class="file-input" type="file" name="resume">
+                          <input id="image" class="file-input" type="file" name="resume">
                           <span class="file-cta">
                             <span class="file-icon">
                               <i class="fas fa-upload"></i>
@@ -68,15 +70,17 @@
                           </span>
                         </label>
                       </div>
-                    <input class="input is-medium modal-input" type="text" value="Post Title" id="post-title" />
-                    <input class="input is-medium modal-input" type="text" value="Date" id="post-date" />
-                    <input class="input is-medium modal-input" type="text" value="Food Truck" id="post-truck" />
-                    <input class="input is-medium modal-input" type="text" value="Meal" id="post-meal" />
-                    <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                    <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
+                    <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
+                    <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
+                    <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
+                    <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
                 </section>
-            <footer class="modal-card-foot">
-                <button class="button is-success">Post</button>
-                <button class="button close-icon" id="cancel-btn">Cancel</button>
+                <form class="modal-card-foot">
+                <button type="submit" class="button is-success">Post</button>
+                <button type="submit" class="button close-icon" id="cancel-btn">Cancel</button>
+                </form>
+            </form>
             </footer> 
         </div>
     </div>

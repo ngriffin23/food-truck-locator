@@ -30,8 +30,10 @@ const create = (req, res) => {
           res.json(newPost);
         });
   
-      
-  
+      });
+    });
+  };
+
 
   const destroy = (req, res) => {
     db.User.findById(req.params.userId, (err, foundUser) => {
@@ -60,6 +62,7 @@ const create = (req, res) => {
       index,
       show,
       create,
+      // update,
       destroy
   }
   
