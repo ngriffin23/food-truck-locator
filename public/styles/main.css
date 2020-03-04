@@ -119,6 +119,10 @@ span.dash-menu-close{
 .modal-card {
 	margin: 7% auto;
 }
+#modal-view {
+	background-color: rgba(255, 255, 255, 0.7);
+	background-size: stretch;
+}
 .upload-btn {
 	color: #FF9665;
 	border: 2px solid #FF9665;
