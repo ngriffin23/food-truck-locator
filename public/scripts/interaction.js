@@ -31,19 +31,19 @@ const deleteCancel = document.getElementById('delete-cancel');
 /* ** EVENT LISTENERS  ** */
 // MENU - OPEN //
 menuOpen.addEventListener('click', function(e) {
-    e.stopImmediatePropagation();
     dashMenu.classList.add('slideInLeft');
     dashMenu.classList.remove('slideOutLeft');
     dashMenu.style.display = 'flex';
+    e.stopImmediatePropagation();
 });
 // MENU - CLOSE //
 menuClose.addEventListener('click', function(e) {
-    e.stopImmediatePropagation();
     dashMenu.classList.add('slideOutLeft');
+    e.stopImmediatePropagation();
 });
 findFoodTruck.addEventListener('click', function(e){
-    e.stopImmediatePropagation();
     dashMenu.classList.add('slideOutLeft');
+    e.stopImmediatePropagation();
 });
 
 /* ======= ======= ======= ======= ======= ======= ======= */
@@ -93,6 +93,7 @@ function closeModal(modalId){
         });
     });
 };
+
 dashBtnArr.forEach(function(thisModalId){
     thisModalId.addEventListener('click', function(){
         switch (thisModalId.id) {
@@ -105,11 +106,13 @@ dashBtnArr.forEach(function(thisModalId){
             case 'open-settings':
                 closeModal(modalSettings);
                 break;
-            case 'open-delete':
-                closeModal(modalDelete);
-                break;
             default:
                 console.log('waiting...');
             }        
      });
  });
+
+// CLOSE DELETE POST WARNING
+ deleteCancel.addEventListener('click', function(e){
+    closeModal(modalDelete);
+ })
