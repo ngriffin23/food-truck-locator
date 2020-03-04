@@ -17,16 +17,18 @@ const users = [
 
 const posts = [
     {
-        foodTruckName: 'Taco Truck',
-        date: 'March 1, 2020',
-        body: 'this is a test for taco truck posts',
-        url:'https://russosgourmet.com/wp-content/uploads/ft1.jpg'
+      postTitle: 'Test',
+      date: 'March 2, 2020',
+      foodTruckName: 'Taco Truck',
+      meal: 'Pasta Alfredo',
+      body: 'this is test posts',
     },
     {
-        foodTruckName: 'Pasta Truck',
-        date: 'March 22, 2020',
-        body: 'this is a test for pasta truck posts',
-        url:'https://brokeassstuart.com/wp-content/pictsnShit/2013/10/tonayense3.jpg'
+      postTitle: 'Test2',
+      date: 'March 8, 2020',
+      foodTruckName: 'French Truck',
+      meal: 'Pasta Alfredo',
+      body: 'this is test 2 post',
     }
 ];
 
