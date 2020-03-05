@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bite N Go</title>
+	 <!-- FONTS/TYPEFACES -->
 	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+	 <!-- CSS -->
 	<link rel="stylesheet" href="/styles/bulma.css">
 	<link rel="stylesheet" href="/styles/main.css">
+
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	
 	<!-- New User JS -->
 	<script defer src="/scripts/usersNew.js"></script>
@@ -32,22 +37,51 @@
 	<section class="section is-flex is-large is-centered index-section" id="sign-up">
 		<div class="container has-text-centered">
 			<h2 class="title is-2 index-title">Sign Up</h2>
+			<!-- Form -->
 			<form id="new-form">
-			<div class="field">
-				<input id="first" class="input index-input" type="text" placeholder="First Name">		
-			</div>
-			<div class="field">
-				<input id="last" class="input index-input" type="text" placeholder="Last Name">		
-			</div>
-			<div class="field">
-				<input id="email" class="input index-input" type="email" placeholder="Email">
-			</div>
-			<div class="field">
-				<input id="password" class="input index-input" type="password" placeholder="Password">
-			</div>
-				<button type="submit" class="button is-medium is-rounded index-btn">Submit</button>
+        <!-- Form - First Name -->
+				<div class="field">
+					<label><h4 class="title is-5 has-text-white">First Name</h4></label>
+					<p class="control has-icons-left">
+						<input id="first" class="input index-input" type="text" placeholder="First Name">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-user"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Last Name -->
+				<div class="field">
+					<label><h4 class="title is-5 has-text-white">Last Name</h4></label>
+					<p class="control has-icons-left">
+						<input id="last" class="input index-input" type="text" placeholder="Last Name">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-user"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Email -->
+				<div class="field">
+          <label><h4 class="title is-5 has-text-white">Email</h4></label>
+					<p class="control has-icons-left">
+						<input id="email" class="input index-input" type="email" placeholder="Email">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-envelope"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Password -->
+				<div class="field">
+          <label><h4 class="title is-5 has-text-white">Password</h4></label>
+					<p class="control has-icons-left">
+						<input id="password" class="input index-input" type="password" placeholder="Password">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-lock"></i>
+						</span>
+					  </p>
+				</div>
+					<button type="submit" class="button is-medium is-rounded index-btn">Submit</button>
 			</form>
-			</div>
+		</div>
 	</section>
 
   	<!--  Sign In Section -->
@@ -55,14 +89,14 @@
 		<div class="container has-text-centered ">
 			<h2 class="title is-2 index-title">Sign In</h2>
 			<form id="new-form2">
-			<div class="field">
-				<input id="email2" class="input index-input" type="email" placeholder="Email">
-			</div>
-			<div class="field">
-				<input id="password2" class="input index-input" type="password" placeholder="Password">
-			</div>
-			<button type="submit" class="button is-medium is-rounded index-btn">Login</button>
-		</form>
+				<div class="field">
+					<input id="email2" class="input index-input" type="email" placeholder="Email">
+				</div>
+				<div class="field">
+					<input id="password2" class="input index-input" type="password" placeholder="Password">
+				</div>
+				<button type="submit" class="button is-medium is-rounded index-btn">Login</button>
+			</form>
 		</div>
 	</section>
 </body>

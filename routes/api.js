@@ -20,3 +20,5 @@ router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
 module.exports = router;
+
+///connect button w ajax get value

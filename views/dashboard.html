@@ -10,7 +10,7 @@
     <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/animate.css">
-	<link rel="stylesheet" href="/styles/bulma.css" />
+	  <link rel="stylesheet" href="/styles/bulma.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
     <script defer src="/scripts/interaction.js"></script>
@@ -19,7 +19,6 @@
 </head>
 <body>
     <!-- DASHBOARD - MENU -->
-
     <div class="dash-menu-open is-centered has-text-centered">
         <span class="dash-menu-open is-centered">Menu</span>
     </div>
@@ -27,22 +26,21 @@
     <aside class="menu section is-overlay is-medium is-centered has-text-centered animated" id="dash-menu">
         <div class="container">
             <h3 class="title is-3">Hello, {FIRSTNAME}!</h3>
-            <a class="button is-medium is-rounded dash-btn" id="find-food-truck">Find Food Truck</a>
-            <a class="button is-medium is-rounded dash-btn" id="open-create">Create Posts</a>
-            <a class="button is-medium is-rounded dash-btn" id="open-view">View Posts</a>
-            <a class="button is-medium is-rounded dash-btn" id="open-update" >Edit a Post</a>
-            <a class="button is-medium is-rounded dash-btn" id="open-settings">Settings</a><br />
+            <a class="button is-medium is-rounded dash-btn open-this"  id="find-food-truck">Find Food Truck</a>
+            <a class="button is-medium is-rounded dash-btn open-this"  id="open-create">Create Posts</a>
+            <a class="button is-medium is-rounded dash-btn open-this"  id="open-view">View Posts</a>
+            <a class="button is-medium is-rounded dash-btn open-this"  id="open-settings">Settings</a><br />
             <span class="icon is-large dash-menu-close"><i class="fas fa-2x fa-chevron-left"></i></span>
         </div>
     </aside>
 
     <!-- DASHBOARD - MODAL - DELETE -->
-    <div class="animated modal has-text-centered is-centered" id="modal-delete">
-        <div class="container is-medium">
-            <h2 class="title is-2">Are you sure you want to delete this post?</h2>
-            <button class="button is-danger">Yes! Delete!</button>
-            <button class="button" id="delete-cancel">Cancel</button>
-        </div>
+    <div class="modal has-text-centered is-centered animated" id="modal-delete">
+      <div class="container is-centered">
+        <h2 class="title is-2 is-centered ">Are you sure you want to delete this post?</h2>
+        <button class="button is-danger">Yes! Delete!</button>
+        <button class="button delete-btn" id="delete-cancel">Cancel</button>
+      </div>
     </div>
 
     <!-- DASHBOARD - MODAL - CREATE  -->
@@ -53,36 +51,20 @@
                     <button class="delete close-icon close-modal" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body has-text-centered">
-                    <div class="file is-dark is-medium has-name">
-                        <form id="newPost">
-                        <label class="file-label">
-                          <input id="image" class="file-input" type="file" name="resume">
-                          <span class="file-cta">
-                            <span class="file-icon">
-                              <i class="fas fa-upload"></i>
-                            </span>
-                            <span class="file-label">
-                              Choose a file…
-                            </span>
-                          </span>
-                          <span class="file-name">
-                            Screen Shot 2017-07-29 at 15.54.25.png
-                          </span>
-                        </label>
+                    <form id="newPost">    
+                      <div>
+                      <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
                       </div>
-                    <div>
-                    <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
-                    </div>
-                    <div>
-                    <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
-                    </div>
-                    <div>
-                    <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
-                    </div>
-                    <div>
-                    <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
-                    </div>
-                    <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                      <div>
+                      <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
+                      </div>
+                      <div>
+                      <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
+                      </div>
+                      <div>
+                      <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
+                      </div>
+                      <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
                 </section>
                 <form class="modal-card-foot">
                 <button type="submit" class="button is-success">Post</button>
@@ -98,25 +80,9 @@
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Update Post</p>
-                <button class="delete close-icon" aria-label="close"></button>
+                <button class="delete update-close" aria-label="close" id="update-cancel-btn"></button>
             </header>
             <section class="modal-card-body has-text-centered">
-                <div class="file is-dark is-medium has-name">
-                    <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                        <span class="file-icon">
-                        <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                        Choose a file…
-                        </span>
-                    </span>
-                    <span class="file-name">
-                        Screen Shot 2017-07-29 at 15.54.25.png
-                    </span>
-                    </label>
-                </div>
                 <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
                 <input class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
                 <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
@@ -125,8 +91,7 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Update</button>
-                <button class="button is-danger" id="delete-btn">Delete</button>
-                <button class="button" id="cancel-btn">Cancel</button>
+                <button class="button update-close" id="update-cancel-btn">Cancel</button>
             </footer> 
         </div>
     </div>
@@ -147,9 +112,69 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Update</button>
-                <button class="button cancel-btn">Cancel</button>
+                <button class="button cancel-btn close-icon">Cancel</button>
             </footer> 
          </div>
     </div>
+
+    <!-- DASHBOARD VIEW POSTS -->
+    <div class="modal is-centered animated" id="modal-view">
+        <div class="modal-card is-centered">
+          <!-- VIEW POST HEADER -->
+            <header class="modal-card-head">
+                <p class="modal-card-title">Posts</p>
+                <button class="delete close-icon" aria-label="close"></button>
+            </header>
+            <!-- POSTS-->
+            <div class="modal-content post-content">
+              <!-- SAMPLE POST 1-->
+              <div class="tile card post-card">
+                  <div class="card-content post-style">
+                      <!-- POST TITLE -->
+                      <p class="title is-4 post-title">Hella BOMB Burrito.</p>
+                      <!-- POST DATE -->
+                      <p class="subtitle is-6 post-date"><time datetime="2020-1-31">03:01 PM - 31 Jan 2020</time></p>
+                      <!-- POST TRUCK -->
+                      <p class="subtitle is-6">      
+                          <span class="icon is-small">
+                              <i class="fas fa-map-marker-alt"></i>
+                          </span> 
+                          <span class="post-meal">Señor Sisig</span>
+                      </p>
+                      <!-- POST MEAL -->
+                      <p class="subtitle is-6">
+                          <span class="icon is-small">
+                              <i class="fas fa-utensils"></i>
+                          </span>		
+                          <span class="post-meal"> California Tosilog Burrito w/ Ube tortilla and extra egg</span>
+                      </p>
+                      <!-- POST Details -->
+                      <p class="post-body">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                          Odit libero velit consectetur nobis labore.
+                          Quas, libero? Recusandae excepturi, asperiores 
+                          numquam id temporibus natus a, vel earum ab quas, voluptatem facere.
+                      </p>
+                 
+                  <footer class="card-footer post-footer">
+                      <div class="post-footer-container">
+                          <button class="button edit-btn post-btn open-this" id="open-update">
+                              <span class="icon">
+                                  <i class="fas fa-edit"></i>
+                              </span>
+                          </button>
+                          <button class="button post-btn open-this" id="open-delete" >
+                              <span class="icon">
+                                  <i class="fas fa-trash-alt"></i>
+                              </span>
+                          </button>
+                      </div>
+                  </footer> 
+                </div>
+              </div>
+              <!-- END SAMPLE POST 1-->
+        </div> 
+    </div>
+
 </body>
 </html>
