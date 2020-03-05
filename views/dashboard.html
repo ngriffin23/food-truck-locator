@@ -13,14 +13,15 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
     <script defer src="/scripts/jquery.js"></script>
+    <script defer src="/scripts/createpost.js"></script>
     <script defer src="/scripts/interaction.js"></script>
     <script defer src="/scripts/userProfile.js"></script>
-    <script defer src="/scripts/createpost.js"></script>
+
 
 </head>
 <body>
     <!-- DASHBOARD - MENU -->
-    <div class="dash-menu-open is-centered has-text-centered">
+    <div class="dash-menu-open is-pulled-right has-text-centered">
         <span class="dash-menu-open is-centered">Menu</span>
     </div>
 
@@ -39,7 +40,7 @@
     <div class="modal has-text-centered is-centered animated" id="modal-delete">
       <div class="container is-centered">
         <h2 class="title is-2 is-centered ">Are you sure you want to delete this post?</h2>
-        <button class="button is-danger">Yes! Delete!</button>
+        <button class="button is-danger" id="yes-delete">Yes! Delete!</button>
         <button class="button delete-btn" id="delete-cancel">Cancel</button>
       </div>
     </div>
@@ -91,7 +92,7 @@
                 <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Update</button>
+                <button class="button is-success" id="confirm-update" >Update</button>
                 <button class="button update-close" id="update-cancel-btn">Cancel</button>
             </footer> 
         </div>
@@ -126,9 +127,8 @@
                 <p class="modal-card-title">Posts</p>
                 <button class="delete close-icon" aria-label="close"></button>
             </header>
-            <!-- POSTS-->
+            <!-- POSTS -->
             <div class="modal-content post-content" id="post-container">
-
             </div>
 
 </body>

@@ -33,25 +33,6 @@ app.use('/', routes.views);
 // api routes
 app.use('/api/v1', routes.api);
 
-// POSTS
-// app.get('/api/v1/posts', function(req,res){
-//   res.send('Hello jello from server.js');
-// });
-// app.post('/posts', function(req,res){
-//   // console.log(res);
-//   let createPostTitle = req.body.postTitle;
-//   let createPostDate = req.body.date;
-//   let createFoodTruckName = req.body.foodTruckName;
-//   let createMeal = req.body.meal;
-//   let createBody = req.body.body;
-//   ctrl.posts.create.push({
-//     postTitle: createPostTitle,
-//     date: createPostDate,
-//     foodTruckName: createFoodTruckName,
-//     meal: createMeal,
-//     body: createBody
-//   });
-// });
 
 // API Error 404
 app.use('/api/*', (req, res) => {

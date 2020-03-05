@@ -24,10 +24,13 @@ const modalView = document.getElementById('modal-view');
 const modalUpdate = document.getElementById('modal-update');
 const modalSettings = document.getElementById('modal-settings');
 const modalDelete = document.getElementById('modal-delete');
+// const modalDelete = document.getElementById('modal-delete');
 // CLOSE/CANCEL BUTTONS
 const closeIcon = document.querySelector('.close-icon');
 const cancelBtn = document.getElementById('cancel-btn');
 const deleteCancel = document.getElementById('delete-cancel');
+const yesDelete = document.getElementById('yes-delete');
+const confirmUpdate = document.getElementById('confirm-update')
 /* ======= ======= ======= ======= ======= ======= ======= */
 
 /* ** EVENT LISTENERS  ** */
@@ -73,11 +76,18 @@ openView.addEventListener('click', function(e){
 });
 
 // MODALS - EDIT/UPDATE - OPEN //
-// openUpdate.addEventListener('click', function(e){
-//     modalUpdate.classList.add('slideInUp');
-//     modalUpdate.classList.remove('slideOutDown');
-//     modalUpdate.style.display = 'initial';
-// });
+// function activateOpenUpdate () {
+//       if(openUpdate){
+//         openUpdate.addEventListener('click', function(){
+//         console.log(hello);
+//         modalUpdate.classList.add('slideInUp');
+//         modalUpdate.classList.remove('slideOutDown');
+//         modalUpdate.style.display = 'initial';
+//     });
+// } else {
+//     console.log('update button non-existent');
+//     }
+// } ;
 
 // MODALS - DELETE - OPEN //
 // openDelete.addEventListener('click', function(e){
@@ -127,7 +137,28 @@ dashBtnArr.forEach(function(thisModalId){
         modalDelete.style.display = "none";
     });
 });
+
 deleteCancel.addEventListener('click', function(){
     modalDelete.classList.add('fadeOut');
     modalDelete.style.display = "none";
  });
+ 
+ yesDelete.addEventListener('click', function(){
+    if(modalDelete.classList.contains('slideOutDown')){
+        modalDelete.classList.remove('slideOutDown');
+        modalDelete.classList.add('fadeOut');
+        modalDelete.style.display = "none";
+    }else{
+    modalDelete.classList.add('fadeOut');
+    modalDelete.style.display = "none";
+ }});
+
+ confirmUpdate.addEventListener('click', function(){
+    if(modalUpdate.classList.contains('slideOutDown')){
+        modalUpdate.classList.remove('slideOutDown');
+        modalUpdate.classList.add('slideOutDown');
+       // modalUpdate.style.display = "none";
+    }else{
+    modalUpdate.classList.add('slideOutDown');
+    modalUpdate.style.display = "none";
+ }});

@@ -2,7 +2,6 @@ $(function() {
     /* ** FUNCTIONS  ** */
     // HTML TEMPLATE
     function getPostTemplate(post){
-        // console.log(post);
         return `
         <div class="tile card post-card">
         <div class="card-content post-style">
@@ -28,12 +27,12 @@ $(function() {
         <p class="post-body"> ${post.body}</p>
         <footer class="card-footer post-footer">
         <div class="post-footer-container">
-        <button class="button edit-btn post-btn open-this" id="open-update">
+        <button class="button edit-btn post-btn" id="open-update">
         <span class="icon">
          <i class="fas fa-edit"></i>
         </span>
         </button>
-        <button class="button post-btn open-this" id="open-delete" >
+        <button class="button post-btn" id="open-delete" >
         <span class="icon">
         <i class="fas fa-trash-alt"></i>
         </span>
@@ -50,8 +49,29 @@ $(function() {
         let newPost = getPostTemplate(post);
         let postContainer = document.getElementById('post-container');
         postContainer.insertAdjacentHTML('afterbegin', newPost);
-    }
+        
+        // ADD EVENT LISTENERS TO UPDATE & DELETE ICONS //
+        // MODALS - EDIT/UPDATE - OPEN //
+        const openUpdate = document.getElementById('open-update');
+        const modalUpdate = document.getElementById('modal-update');
+        openUpdate.addEventListener('click', function(){
+            modalUpdate.classList.add('slideInUp');
+            modalUpdate.classList.remove('slideOutDown');
+            modalUpdate.style.display = 'initial';
+            console.log('heck')
+        });
 
+       // MODALS - DELETE - OPEN //
+        const openDelete = document.getElementById('open-delete');
+        const modalDelete = document.getElementById('modal-delete');
+        openDelete.addEventListener('click', function(e){
+            modalDelete.classList.add('fadeIn');
+            modalDelete.classList.remove('fadeOut');
+            modalDelete.style.display = 'initial';
+            e.stopPropagation();
+        });
+    };
+    
     // RENDER ALL POSTS
     function renderAllPosts(posts){
         posts.forEach(post => renderPostTemplate(post));
@@ -69,14 +89,14 @@ $(function() {
     });
     // ON SUBMIT, CREATE NEW POST
     $('#newPost').on('submit', function(event){
-        $('#modal-create').toggleClass('slideOutDown');
+        $('#modal-view').addClass('slideInUp');
+        $('#modal-create').slideDown();
         event.preventDefault();
         let newPostTitle = $('#post-title');
         let newDate = $('#post-date');
         let newTruck = $('#post-truck');
         let newMeal = $('#post-meal');
         let newBody = $('#post-body');
-
         $.ajax({
             url: '/api/v1/posts',
             method: 'POST',
@@ -97,5 +117,16 @@ $(function() {
                 newBody.val('');
             }
         })
-    })
+    });
+    $("#open-update").on('click', function(event){
+        console.log('oh heck')
+        $.ajax({
+            url: '/api/v1/updatePost/:id',
+            method: 'GET',
+            contentType: 'application/json',
+            success: function(res) {
+                console.log('hi');
+             },
+         });
+    });
 });
