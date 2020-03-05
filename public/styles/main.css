@@ -86,17 +86,18 @@ section {
 	margin: 10px auto;
 }
 span.dash-menu-open {
-	color: crimson;
+	color:#fff;
+	font-size: 2em;
 	font-weight: 900;
-	margin: 5px auto;
+	margin: 0 auto;
 	cursor: pointer;
 }
  div.dash-menu-open {
-	margin: 10px; 
-	width: 75px;
+	margin: 5%; 
+	width: 200px;
 	padding: 5px 10px;
 	border-radius: 10px;
-	background: rgba(255, 255, 255, 0.7);
+	background: crimson;
 	cursor: pointer;
  }
  div.dash-menu-open:hover {
@@ -135,7 +136,14 @@ span.dash-menu-close{
 }
 #modal-delete{
 	z-index: 999;
-	background-color: rgba(255, 255, 255, 0.7);
+	width: 100%;
+	margin: 0 auto;
+	padding: 50px;
+	background-color: rgba(255, 255, 255, 0.9);
+
+}
+#modal-delete{
+	align-items: center;
 }
 
 /* * MODAL- INPUT STYLES* */
@@ -215,7 +223,19 @@ span.dash-menu-close{
 		width: 90%;
 		margin: 4% auto;
 	}
-	.post-style{
+	.post-style {
 		padding: 15px;
+	}
+	#modal-delete {
+		margin: 0 auto;
+		padding: 200px 50px;
+		width: 100%;
+		height: 100vh;
+	}
+	#modal-delete h2{
+		font-size: 2em;
+	}
+	div.dash-menu-open{
+		width: 150px;
 	}
 }

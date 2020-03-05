@@ -9,12 +9,12 @@
     <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
     <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/styles/animate.css">
-	<link rel="stylesheet" href="../public/styles/bulma.css" />
-    <link rel="stylesheet" href="../public/styles/main.css" />
+    <link rel="stylesheet" href="/styles/animate.css">
+	  <link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
-    <script defer src="../public/scripts/interaction.js"></script>
-    <script defer src="../public/scripts/userProfile.js"></script>
+    <script defer src="/scripts/interaction.js"></script>
+    <script defer src="/scripts/userProfile.js"></script>
 
 </head>
 <body>
@@ -22,6 +22,7 @@
     <div class="dash-menu-open is-centered has-text-centered">
         <span class="dash-menu-open is-centered">Menu</span>
     </div>
+
     <aside class="menu section is-overlay is-medium is-centered has-text-centered animated" id="dash-menu">
         <div class="container">
             <h3 class="title is-3">Hello, {FIRSTNAME}!</h3>
@@ -35,11 +36,11 @@
 
     <!-- DASHBOARD - MODAL - DELETE -->
     <div class="modal has-text-centered is-centered animated" id="modal-delete">
-        <div class="container is-centered">
-            <h2 class="title is-2">Are you sure you want to delete this post?</h2>
-            <button class="button is-danger">Yes! Delete!</button>
-            <button class="button close-icon" id="delete-cancel">Cancel</button>
-        </div>
+      <div class="container is-centered">
+        <h2 class="title is-2 is-centered ">Are you sure you want to delete this post?</h2>
+        <button class="button is-danger">Yes! Delete!</button>
+        <button class="button delete-btn" id="delete-cancel">Cancel</button>
+      </div>
     </div>
 
     <!-- DASHBOARD - MODAL - CREATE  -->
@@ -50,36 +51,20 @@
                     <button class="delete close-icon close-modal" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body has-text-centered">
-                    <div class="file is-dark is-medium has-name">
-                        <form id="newPost">
-                        <label class="file-label">
-                          <input id="image" class="file-input" type="file" name="resume">
-                          <span class="file-cta">
-                            <span class="file-icon">
-                              <i class="fas fa-upload"></i>
-                            </span>
-                            <span class="file-label">
-                              Choose a file…
-                            </span>
-                          </span>
-                          <span class="file-name">
-                            Screen Shot 2017-07-29 at 15.54.25.png
-                          </span>
-                        </label>
+                    <form id="newPost">    
+                      <div>
+                      <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
                       </div>
-                    <div>
-                    <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
-                    </div>
-                    <div>
-                    <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
-                    </div>
-                    <div>
-                    <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
-                    </div>
-                    <div>
-                    <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
-                    </div>
-                    <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                      <div>
+                      <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
+                      </div>
+                      <div>
+                      <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
+                      </div>
+                      <div>
+                      <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
+                      </div>
+                      <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
                 </section>
                 <form class="modal-card-foot">
                 <button type="submit" class="button is-success">Post</button>
@@ -106,7 +91,6 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Update</button>
-                <button class="button is-danger" id="delete-btn">Delete</button>
                 <button class="button update-close" id="update-cancel-btn">Cancel</button>
             </footer> 
         </div>
@@ -165,7 +149,7 @@
                           <span class="post-meal"> California Tosilog Burrito w/ Ube tortilla and extra egg</span>
                       </p>
                       <!-- POST Details -->
-                      <p class="post-details">
+                      <p class="post-body">
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                           Odit libero velit consectetur nobis labore.
                           Quas, libero? Recusandae excepturi, asperiores 
@@ -179,7 +163,7 @@
                                   <i class="fas fa-edit"></i>
                               </span>
                           </button>
-                          <button class="button post-btn open-this" id="delete-btn">
+                          <button class="button post-btn open-this" id="open-delete" >
                               <span class="icon">
                                   <i class="fas fa-trash-alt"></i>
                               </span>

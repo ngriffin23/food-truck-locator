@@ -5,11 +5,11 @@ postForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     console.log('click')
-    const title = document.getElementById('title');
-    const date = document.getElementById('date');
-    const truck = document.getElementById('truck');
-    const meal = document.getElementById('meal');
-    const body = document.getElementById('body');
+    const title = document.getElementById('post-title');
+    const date = document.getElementById('post-date');
+    const truck = document.getElementById('post-truck');
+    const meal = document.getElementById('post-meal');
+    const body = document.getElementById('post-body');
     let formIsValid = false;
   
     // Select Error Messages
