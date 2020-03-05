@@ -17,15 +17,6 @@ router.post('/users/:userId/posts', ctrl.posts.create);
 router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
-///connect button w ajax get value
-
-router.post('/dashboard/:createpost', (req, res) => {
-    const createPost = new Post({
-        postTitle: String,
-        postDate: Date.now(),
-        post
-    }) 
-})
 
 module.exports = router;
 

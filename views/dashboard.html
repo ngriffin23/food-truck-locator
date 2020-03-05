@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,8 +12,10 @@
 	  <link rel="stylesheet" href="/styles/bulma.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
+    <script defer src="/scripts/jquery.js"></script>
     <script defer src="/scripts/interaction.js"></script>
     <script defer src="/scripts/userProfile.js"></script>
+    <script defer src="/scripts/createpost.js"></script>
 
 </head>
 <body>
@@ -67,7 +68,7 @@
                       <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" id="post-body" rows="5"></textarea>
                 </section>
                 <form class="modal-card-foot">
-                <button type="submit" class="button is-success">Post</button>
+                <button type="submit" class="button is-success" id="post-submit-btn">Post</button>
                 <button type="submit" class="button close-icon" id="cancel-btn">Cancel</button>
                 </form>
             </form>
@@ -126,55 +127,9 @@
                 <button class="delete close-icon" aria-label="close"></button>
             </header>
             <!-- POSTS-->
-            <div class="modal-content post-content">
-              <!-- SAMPLE POST 1-->
-              <div class="tile card post-card">
-                  <div class="card-content post-style">
-                      <!-- POST TITLE -->
-                      <p class="title is-4 post-title">Hella BOMB Burrito.</p>
-                      <!-- POST DATE -->
-                      <p class="subtitle is-6 post-date"><time datetime="2020-1-31">03:01 PM - 31 Jan 2020</time></p>
-                      <!-- POST TRUCK -->
-                      <p class="subtitle is-6">      
-                          <span class="icon is-small">
-                              <i class="fas fa-map-marker-alt"></i>
-                          </span> 
-                          <span class="post-meal">Señor Sisig</span>
-                      </p>
-                      <!-- POST MEAL -->
-                      <p class="subtitle is-6">
-                          <span class="icon is-small">
-                              <i class="fas fa-utensils"></i>
-                          </span>		
-                          <span class="post-meal"> California Tosilog Burrito w/ Ube tortilla and extra egg</span>
-                      </p>
-                      <!-- POST Details -->
-                      <p class="post-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                          Odit libero velit consectetur nobis labore.
-                          Quas, libero? Recusandae excepturi, asperiores 
-                          numquam id temporibus natus a, vel earum ab quas, voluptatem facere.
-                      </p>
-                 
-                  <footer class="card-footer post-footer">
-                      <div class="post-footer-container">
-                          <button class="button edit-btn post-btn open-this" id="open-update">
-                              <span class="icon">
-                                  <i class="fas fa-edit"></i>
-                              </span>
-                          </button>
-                          <button class="button post-btn open-this" id="open-delete" >
-                              <span class="icon">
-                                  <i class="fas fa-trash-alt"></i>
-                              </span>
-                          </button>
-                      </div>
-                  </footer> 
-                </div>
-              </div>
-              <!-- END SAMPLE POST 1-->
-        </div> 
-    </div>
+            <div class="modal-content post-content" id="posts-container">
+
+            </div>
 
 </body>
 </html>
