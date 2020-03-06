@@ -30,7 +30,6 @@ postForm.addEventListener('submit', (event) => {
     mealFeedback && mealFeedback.remove();
     bodyFeedback && bodyFeedback.remove();
   
-  
     if (!title.value) {
       formIsValid = false;
       title.classList.add('is-invalid');
@@ -75,28 +74,4 @@ postForm.addEventListener('submit', (event) => {
       formIsValid = true;
       body.classList.add('is-valid');
     }
-  
-
-    // fetch
-//     if (formIsValid) {
-//       console.log('Let\'s do this!');
-//       const newPost = {title: title.value, date: date.value, truck: truck.value, meal: meal.value, body: body.value};
-//       console.log(newPost);
-  
-//       fetch(`/api/v1/users/:userId/posts`, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(newPost),
-//       })
-//         .then((stream) => stream.json())
-//         .then((res) => {
-//           console.log(res);
-//           if (res) {
-//             window.location = '/dashboard';
-//           }
-//         })
-//         .catch((err) => console.log(err));
-//     }
   });

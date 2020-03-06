@@ -40,8 +40,9 @@ Users are able to write posts about different food trucks they visit.
 ## User Stories
 ![User Stories](./assets/user-stories.png)
 ​
-​
-​
+
+## Demo
+​![Bite 'N Go Wireframe](./assets/bitengodemo.mov)
 ​
 ### Authors
 ​
