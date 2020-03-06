@@ -16,20 +16,27 @@ const show = (req, res) => {
 
 const createPost = (req,res) => {
 
+
   db.Post.create(req.body, (err, newPost) => {
     if(err) return res.status(400).json({status: 400, error: 'Something went wrong, please try again.'});
     res.json(newPost);
   })
 }
 const updatePost = (req,res) => {
+  console.log(req.body)
+console.log("beep")
     db.Post.findByIdAndUpdate(req.params.id, req.body, {new : true}, (err, updatedPost) => {
       if (err) return console.log(err);
+      console.log(req.body)
       res.json(updatedPost);
     })
 }
-// const destroyPost = (req,res) => {
-//   db.Post.delete
-// }
+ const destroyPost = (req,res) => {
+  db.Post.findByIdAndDelete(req.params.id, (err, destroyedPost) => {
+    if (err) return console.log(err);
+    res.json(destroyedPost);
+  })
+}
 
 const create = (req, res) => {
     req.body.user = '5e5d5aaa9ca91b67e4e22fca'; // Temp user association for testing
@@ -81,7 +88,7 @@ const create = (req, res) => {
       createPost,
       create,
       // update,
-      //destroyPost,
+      destroyPost,
       updatePost,
       destroy
   }

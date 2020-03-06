@@ -1,6 +1,6 @@
 $(function() {
-    /* ** FUNCTIONS  ** */
-    // HTML TEMPLATE
+    let postIdClick;
+    // FN - NEW POST - HTML TEMPLATE //
     function getPostTemplate(post){
         return `
         <div class="tile card post-card">
@@ -26,15 +26,15 @@ $(function() {
         <!-- POST Details -->
         <p class="post-body"> ${post.body}</p>
         <footer class="card-footer post-footer">
-        <div class="post-footer-container">
+        <div class="post-footer-container is-centered">
         <button class="button edit-btn post-btn" id="open-update">
         <span class="icon">
-         <i class="fas fa-edit"></i>
+         <i data-id=${post._id}  class="fas fa-edit"></i>
         </span>
         </button>
         <button class="button post-btn" id="open-delete" >
         <span class="icon">
-        <i class="fas fa-trash-alt"></i>
+        <i data-id=${post._id} class="fas fa-trash-alt"></i>
         </span>
         </button>
         </div>
@@ -43,41 +43,37 @@ $(function() {
         </div>
           `
     }
-
-    // RENDER POST TEMPLATE
+    // FN - RENDER POST TEMPLATE
     function renderPostTemplate(post){
         let newPost = getPostTemplate(post);
         let postContainer = document.getElementById('post-container');
         postContainer.insertAdjacentHTML('afterbegin', newPost);
-        
-        // ADD EVENT LISTENERS TO UPDATE & DELETE ICONS //
-        // MODALS - EDIT/UPDATE - OPEN //
+
+        //  EVENT LISTENER - EDIT/UPDATE  //
         const openUpdate = document.getElementById('open-update');
         const modalUpdate = document.getElementById('modal-update');
-        openUpdate.addEventListener('click', function(){
-            modalUpdate.classList.add('slideInUp');
+        openUpdate.addEventListener('click', function(event){
+            modalUpdate.classList.add('slideInUp', 'modal-background');
             modalUpdate.classList.remove('slideOutDown');
             modalUpdate.style.display = 'initial';
-            console.log('heck')
-        });
+            postIdClick = event.target.dataset.id;
+     });
 
-       // MODALS - DELETE - OPEN //
+       // EVENT LISTENER - DELETE  //
         const openDelete = document.getElementById('open-delete');
         const modalDelete = document.getElementById('modal-delete');
-        openDelete.addEventListener('click', function(e){
+        openDelete.addEventListener('click', function(event){
             modalDelete.classList.add('fadeIn');
             modalDelete.classList.remove('fadeOut');
             modalDelete.style.display = 'initial';
-            e.stopPropagation();
+            postIdClick = event.target.dataset.id;
         });
     };
-    
-    // RENDER ALL POSTS
+    // FN - RENDER ALL POSTS //
     function renderAllPosts(posts){
         posts.forEach(post => renderPostTemplate(post));
     }
-
-    /* ** AJAX  ** */
+    // AJAX - READ/VIEW POSTS //
     $(document).ready( function (){
         $.ajax({
             url: '/api/v1/posts',
@@ -87,10 +83,10 @@ $(function() {
             }
         })
     });
-    // ON SUBMIT, CREATE NEW POST
+    // AJAX - CREATE POST //
     $('#newPost').on('submit', function(event){
-        $('#modal-view').addClass('slideInUp');
-        $('#modal-create').slideDown();
+       
+        $('#modal-create').addClass('slideOutDown');
         event.preventDefault();
         let newPostTitle = $('#post-title');
         let newDate = $('#post-date');
@@ -115,18 +111,52 @@ $(function() {
                 newTruck.val('');
                 newMeal.val('');
                 newBody.val('');
+                alert('yay you created a post!');
             }
         })
     });
-    $("#open-update").on('click', function(event){
-        console.log('oh heck')
+    // AJAX - UPDATE //
+    $('#confirm-update').on('click', function(event) {
+        let updatePostTitle = $('#update-post-title');
+        let updatePostDate =  $('#update-post-date');
+        let updatePostTruck = $('#update-post-truck');
+        let updatePostMeal =  $('#update-post-meal');
+        let updatePostBody = $('#update-post-body');
+        const data ={
+         postTitle : updatePostTitle.val(),
+         date: updatePostDate.val(),
+         foodTruckName: updatePostTruck.val(),
+         meal : updatePostMeal.val(),
+         body : updatePostBody.val()
+        }
+        console.log(data)
         $.ajax({
-            url: '/api/v1/updatePost/:id',
-            method: 'GET',
+            url: `/api/v1/posts/${postIdClick}`,
+            method: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function(res) {
+                console.log(res);
+                alert('yay you updated a post!');
+            }
+        });
+        postIdClick = '';
+      }
+    ) 
+    // AJAX - DELETE //
+    $('#yes-delete').on('click', function(event) {
+        console.log(event);
+        console.log(postIdClick);
+        $.ajax({
+            url: `/api/v1/posts/${postIdClick}`,
+            method: 'DELETE',
             contentType: 'application/json',
             success: function(res) {
-                console.log('hi');
-             },
-         });
-    });
+                console.log(res);
+                alert('Post DESTROYED.')
+            },
+        });
+        postIdClick = '';
+      }
+    ) 
 });

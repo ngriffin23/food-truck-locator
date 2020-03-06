@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
+    <title>Bite 'N Go - Welcome!</title>
     <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/animate.css">
@@ -27,7 +26,7 @@
 
     <aside class="menu section is-overlay is-medium is-centered has-text-centered animated" id="dash-menu">
         <div class="container">
-            <h3 class="title is-3">Hello, {FIRSTNAME}!</h3>
+            <h3 class="title is-3">Hello!</h3>
             <a class="button is-medium is-rounded dash-btn open-this"  id="find-food-truck">Find Food Truck</a>
             <a class="button is-medium is-rounded dash-btn open-this"  id="open-create">Create Posts</a>
             <a class="button is-medium is-rounded dash-btn open-this"  id="open-view">View Posts</a>
@@ -85,11 +84,11 @@
                 <button class="delete update-close" aria-label="close" id="update-cancel-btn"></button>
             </header>
             <section class="modal-card-body has-text-centered">
-                <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
-                <input class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
-                <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
-                <input class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
-                <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="update-post-title" />
+                <input class="input is-medium modal-input" type="text" placeholder="Date" id="update-post-date" />
+                <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="update-post-truck" />
+                <input class="input is-medium modal-input" type="text" placeholder="Meal" id="update-post-meal" />
+                <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" id="update-post-body" rows="5"></textarea>
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success" id="confirm-update" >Update</button>

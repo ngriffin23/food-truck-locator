@@ -16,6 +16,7 @@ router.post('/posts', ctrl.posts.createPost);
 router.post('/users/:userId/posts', ctrl.posts.create);
 router.put('/posts/:id', ctrl.posts.updatePost);
 // router.put('/users/:userId/posts/:postId', ctrl.posts.update);
+router.delete('/posts/:id', ctrl.posts.destroyPost);
 router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 

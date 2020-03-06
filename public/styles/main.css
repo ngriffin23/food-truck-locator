@@ -123,8 +123,7 @@ span.dash-menu-close{
 
 /* * MODAL STYLES* */
 .modal-card {
-	margin: 10px auto;
-	height: 100vh;
+	margin: 0 auto;
 }
 
 .upload-btn {
@@ -186,8 +185,7 @@ span.dash-menu-close{
 	color: #333;
 }
 .post-footer {
-	display: flex;
-	justify-content: flex-end;
+	margin: 0 auto;
 	border: 0;
 	padding: 5px 2px;
 }
@@ -220,6 +218,7 @@ span.dash-menu-close{
 
 	.modal-card {
 		margin: 0 auto;
+		height: 100vh;
 	}
 	.modal-content {
 		margin: 0;
@@ -227,7 +226,6 @@ span.dash-menu-close{
 	.post-card {
 		width: 90%;
 		margin: 4% auto 0 auto;
-		height: 100vh;
 	}
 	.post-style {
 		padding: 15px;
