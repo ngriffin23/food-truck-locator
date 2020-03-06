@@ -3,7 +3,7 @@ $(function() {
     // FN - NEW POST - HTML TEMPLATE //
     function getPostTemplate(post){
         return `
-        <div class="tile card post-card">
+        <div class="tile card post-card" id="post-${post._id}">
         <div class="card-content post-style">
         <!-- POST TITLE -->
         <p class="title is-4 post-title">${post.postTitle}</p>
@@ -57,8 +57,9 @@ $(function() {
             modalUpdate.classList.remove('slideOutDown');
             modalUpdate.style.display = 'initial';
             postIdClick = event.target.dataset.id;
+            console.log(`UPDATE - #post-${postIdClick}`)
+           //postIdClick = '';
      });
-
        // EVENT LISTENER - DELETE  //
         const openDelete = document.getElementById('open-delete');
         const modalDelete = document.getElementById('modal-delete');
@@ -67,6 +68,8 @@ $(function() {
             modalDelete.classList.remove('fadeOut');
             modalDelete.style.display = 'initial';
             postIdClick = event.target.dataset.id;
+            console.log(`DELETE - #post-${postIdClick}`)
+           // postIdClick = '';
         });
     };
     // FN - RENDER ALL POSTS //
@@ -129,34 +132,30 @@ $(function() {
          meal : updatePostMeal.val(),
          body : updatePostBody.val()
         }
-        console.log(data)
         $.ajax({
             url: `/api/v1/posts/${postIdClick}`,
             method: 'PUT',
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function(res) {
-                console.log(res);
+                console.log(res.postTitle);
+
                 alert('yay you updated a post!');
             }
         });
-        postIdClick = '';
       }
     ) 
     // AJAX - DELETE //
     $('#yes-delete').on('click', function(event) {
-        console.log(event);
-        console.log(postIdClick);
         $.ajax({
             url: `/api/v1/posts/${postIdClick}`,
             method: 'DELETE',
             contentType: 'application/json',
             success: function(res) {
-                console.log(res);
-                alert('Post DESTROYED.')
+                $('div').remove(`#post-${postIdClick}`);
+                alert(`Post ${postIdClick} DESTROYED.`);
             },
         });
-        postIdClick = '';
       }
     ) 
 });
