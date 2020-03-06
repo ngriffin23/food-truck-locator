@@ -145,3 +145,24 @@ a:hover { color: #101010; }
 }
 .leaflet-container .leaflet-marker-icon { cursor: pointer;
   z-index: -1;  }
+
+  @media screen and (max-width: 490px) {
+
+   .heading {
+      display:none;
+    }
+    .sidebar {
+      line-height: normal;
+      overflow: hidden;
+    }
+
+    .item {
+      font-size: 0.7em;
+    }
+    a.title{
+      font-size:0.9em;
+    }
+    small.quiet{
+      font-size: 1em;
+    }
+  }
