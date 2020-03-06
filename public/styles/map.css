@@ -22,6 +22,7 @@ a {
 a:hover { color: #101010; }
 
 .sidebar {
+  background-color: #fff;
   position: absolute;
   width: 33.3333%;
   height: 100%;
