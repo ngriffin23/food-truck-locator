@@ -6,30 +6,30 @@ $(function() {
         <div class="tile card post-card" id="post-${post._id}">
         <div class="card-content post-style">
         <!-- POST TITLE -->
-        <p class="title is-4 post-title">${post.postTitle}</p>
+        <p class="title is-4 post-title" id="post-title-${post._id}">${post.postTitle}</p>
         <!-- POST DATE -->
-        <p class="subtitle is-6 post-date"> ${post.date}</p>
+        <p class="subtitle is-6 post-date" id="post-date-${post._id}">${post.date}</p>
         <!-- POST TRUCK -->
         <p class="subtitle is-6">      
         <span class="icon is-small">
         <i class="fas fa-map-marker-alt"></i>
         </span> 
-        <span class="post-meal">${post.foodTruckName}</span>
+        <span class="post-meal" id="post-truck-${post._id}">${post.foodTruckName}</span>
         </p>
         <!-- POST MEAL -->
         <p class="subtitle is-6">
         <span class="icon is-small">
         <i class="fas fa-utensils"></i>
         </span>		
-        <span class="post-meal">${post.meal} </span>
+        <span class="post-meal" id="post-meal-${post._id}">${post.meal}</span>
         </p>
         <!-- POST Details -->
-        <p class="post-body"> ${post.body}</p>
+        <p class="post-body" id="post-body-${post._id}">${post.body}</p>
         <footer class="card-footer post-footer">
         <div class="post-footer-container is-centered">
         <button class="button edit-btn post-btn" id="open-update">
         <span class="icon">
-         <i data-id=${post._id}  class="fas fa-edit"></i>
+         <i data-id=${post._id} class="fas fa-edit"></i>
         </span>
         </button>
         <button class="button post-btn" id="open-delete" >
@@ -56,7 +56,6 @@ $(function() {
             modalUpdate.classList.remove('slideOutDown');
             modalUpdate.style.display = 'initial';
             postIdClick = event.target.dataset.id;
-            
      });
        // EVENT LISTENER - DELETE  //
         const openDelete = document.getElementById('open-delete');
@@ -84,7 +83,6 @@ $(function() {
     });
     // AJAX - CREATE POST //
     $('#newPost').on('submit', function(event){
-       
         event.preventDefault();
         let newPostTitle = $('#post-title');
         let newDate = $('#post-date');
@@ -134,8 +132,8 @@ $(function() {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function(res) {
-    
                 alert('yay you updated a post!');
+                postIdClick='';
             }
         });
       }
