@@ -56,6 +56,7 @@ $(function() {
             modalUpdate.classList.remove('slideOutDown');
             modalUpdate.style.display = 'initial';
             postIdClick = event.target.dataset.id;
+            console.log(postIdClick);
      });
        // EVENT LISTENER - DELETE  //
         const openDelete = document.getElementById('open-delete');

@@ -21,7 +21,8 @@ section {
 	display: inherit;
 }
 #logo {
- width: 20%;
+	margin-top: -100px;
+ 	width: 10%;
 }
 
 /* ** INDEX/TITLE STYLES  **  */
@@ -99,7 +100,6 @@ section {
 }
 .dash-menu-open {
 	padding: 5px 10px;
-
 }
 span.dash-menu-open {
 	color:#fff;
@@ -107,7 +107,6 @@ span.dash-menu-open {
 	font-weight: 900;
 	margin: 0 auto;
 	cursor: pointer;
-
 }
  div.dash-menu-open {
 	margin: 5%; 
@@ -119,7 +118,6 @@ span.dash-menu-open {
 	border-radius: 10px;
 	background: crimson;
 	cursor: pointer;
-
  }
  div.dash-menu-open:hover {
 	background: rgba(53,58,77,0.7);
@@ -231,6 +229,10 @@ span.dash-menu-close{
 
 /* * MEDIA QUERIES  **  */
 @media screen and (max-width: 960px) {
+	#logo {
+		margin-top: 0;
+		width: 20%;
+	}
 	#logo-container {
 		margin-bottom: 5px;
 	}
@@ -258,6 +260,9 @@ span.dash-menu-close{
 	}
 }
 @media screen and (max-width: 490px) {
+	#logo {
+		width: 25%;
+	}
 	#logo-container span {
 		color: #F7AD62;
 		display: none;
