@@ -21,10 +21,5 @@ router.delete('/users/:userId/posts/:postId', ctrl.posts.destroy);
 
 
 
-<<<<<<< HEAD
 // GET VALUE FROM SUBMIT
 module.exports = router;
-=======
-module.exports = router;
-
->>>>>>> 8c9360abc1c81b26795ddc59e1e57cd67de3c6b5
