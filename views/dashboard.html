@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bite 'N Go - Welcome!</title>
+    <!-- MAPBOX -->
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
     <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+   <!-- CSS -->
     <link rel="stylesheet" href="/styles/animate.css">
-	<link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/map.css">
     <link rel="stylesheet" href="/styles/main.css" />
+  
+    <!-- JS -->
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
     <script defer src="/scripts/jquery.js"></script>
     <script defer src="/scripts/createpost.js"></script>
     <script defer src="/scripts/interaction.js"></script>
+    <script defer src="/scripts/map.js"></script>
     <script defer src="/scripts/userProfile.js"></script>
 
 
@@ -34,7 +42,16 @@
             <span class="icon is-large dash-menu-close"><i class="fas fa-2x fa-chevron-left"></i></span>
         </div>
     </aside>
-
+   <!-- MAP BOX -->
+   <div class='sidebar'>
+    <div class='heading'>
+      <h1>SF Food Trucks</h1>
+    </div>
+    <div id='listings' class='listings'></div>
+  </div>
+  <div id='map' class='map'> 
+  </div>   
+  
     <!-- DASHBOARD - MODAL - DELETE -->
     <div class="modal has-text-centered is-centered animated" id="modal-delete">
       <div class="container is-centered">
@@ -129,6 +146,8 @@
             <!-- POSTS -->
             <div class="modal-content post-content" id="post-container">
             </div>
+    </div>        
+  
 
 </body>
 </html>

@@ -1,7 +1,8 @@
 /* ** GLOBAL STYLES  **  */
 html {
-	background-image: url('https://i.imgur.com/n2sUAE4.png');
-	background-size: cover;
+	/* background-image: url('https://i.imgur.com/n2sUAE4.png');
+	background-size: cover; */
+	background-color: rgba(255, 255, 255, 0.5);
 	scroll-behavior: smooth;
 }
 
@@ -65,6 +66,7 @@ section {
 	background-color: rgba(53,58,77,0.8);
 	color: crimson;
 	height: 100vh;
+	z-index: 33;
 }
 #dash-menu h3, span {
 	color: #fff;
@@ -85,12 +87,17 @@ section {
 	color: #333;
 	margin: 10px auto;
 }
+.dash-menu-open {
+	padding: 5px 10px;
+
+}
 span.dash-menu-open {
 	color:#fff;
 	font-size: 2em;
 	font-weight: 900;
 	margin: 0 auto;
 	cursor: pointer;
+
 }
  div.dash-menu-open {
 	margin: 5%; 
@@ -99,6 +106,7 @@ span.dash-menu-open {
 	border-radius: 10px;
 	background: crimson;
 	cursor: pointer;
+
  }
  div.dash-menu-open:hover {
 	background: rgba(53,58,77,0.7);
@@ -124,6 +132,7 @@ span.dash-menu-close{
 /* * MODAL STYLES* */
 .modal-card {
 	margin: 0 auto;
+	z-index: 767;
 }
 
 .upload-btn {
