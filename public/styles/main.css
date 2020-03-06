@@ -150,6 +150,10 @@ span.dash-menu-close{
 	border: 2px solid #FF9665;
 	background: transparent;
 }
+#post-submit-btn {
+	color: #fff;
+	background-color: #fb6501e7;
+}
 
 #modal-update{
 	z-index: 777;
