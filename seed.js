@@ -8,25 +8,27 @@ const users = [
         password: 'test1234'
     },
     {
-        firstName: 'Nicole',
-        lastName: 'Griffin',
-        email: 'nicole123@gmail.com',
+        firstName: 'Cat',
+        lastName: 'Carbonell',
+        email: 'cat123@gmail.com',
         password: 'test1234'
     }
 ];
 
 const posts = [
     {
-        foodTruckName: 'Taco Truck',
-        date: 'March 1, 2020',
-        body: 'this is a test for taco truck posts',
-        url:'https://russosgourmet.com/wp-content/uploads/ft1.jpg'
+      postTitle: 'Test',
+      date: 'March 2, 2020',
+      foodTruckName: 'Taco Truck',
+      meal: 'Pasta Alfredo',
+      body: 'this is test posts',
     },
     {
-        foodTruckName: 'Pasta Truck',
-        date: 'March 22, 2020',
-        body: 'this is a test for pasta truck posts',
-        url:'https://brokeassstuart.com/wp-content/pictsnShit/2013/10/tonayense3.jpg'
+      postTitle: 'Test2',
+      date: 'March 8, 2020',
+      foodTruckName: 'French Truck',
+      meal: 'Pasta Alfredo',
+      body: 'this is test 2 post',
     }
 ];
 
@@ -49,7 +51,18 @@ db.User.deleteMany({}, (err, result) => {
 
     console.log(`Successfully deleted ${result.deletedCount} users.`);
 
-  // Create New Artists
+  
+  // Create New Posts
+  db.Post.create(posts, (err, newPosts) => {
+    if (err) {
+      console.log(err);
+      process.exit();
+    }
+    console.log(`Successfully created ${newPosts.length} posts.`);
+        process.exit();
+    });
+  
+    // Create New User
   db.User.create(users, (err, newUsers) => {
     if (err) {
       console.log(err);

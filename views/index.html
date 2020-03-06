@@ -2,73 +2,108 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bite N Go</title>
+	 <!-- FONTS/TYPEFACES -->
 	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles/bulma.css">
-	<link rel="stylesheet" href="styles/main.css">
+	 <!-- CSS -->
+	<link rel="stylesheet" href="/styles/bulma.css">
+	<link rel="stylesheet" href="/styles/main.css">
+
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+	<!-- New User JS -->
+	<script defer src="/scripts/usersNew.js"></script>
+	<script defer src="/scripts/userShow.js"></script>
 	
 </head>
 <body>
 	<!-- Landing Page -->
-	<main>
-	<div class="columns is-centered">
-		<div class="column is-half has-text-centered">
-			<h2 class="title is-2">Want to keep track of your favorite food trucks?</h2>
-			<button class="button is-medium is-rounded index-btn">Sign Up</button>
-
-			<h3 class="title is-3">Have an account already?</h3>
-			<button class="button is-medium is-rounded index-btn">Sign In</button>
+	<section class="section is-flex is-large is-centered index-section" id="landing">
+		<div class="container is-centered has-text-centered">
+			<div id="logo-container">
+				<img src="/images/bitelogo.png" alt="Bite n Go Logo" id="logo" />
+				<br />
+				<span class="title is-1" id="logo-text">Bite n Go!</span>
+			</div>
+			<div class="field">
+				<h2 class="title is-3 index-title" id="index-title-text">Want to keep track of your favorite food trucks?</h2>
+				<button class="button is-medium is-rounded index-btn"><a href="#sign-up">Sign Up</a></button>
+			</div>
+			<div class="field" id="index-subtitle-container">
+				<h3 class="subtitle is-5 index-title" id="index-subtitle-text" >Have an account already?</h3>
+				<button class="button is-medium is-rounded index-btn"><a href="#sign-in">Sign In</a></button>
+			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Sign Up Section -->
-	<div class="columns is-centered">
-		<div class="column is-half has-text-centered">
-			<h2 class="title is-2">Sign Up</h2>
-			<div class="field">
-				<input class="input index-input" type="text" placeholder="Name (first & last)">		
-			</div>
-		<div class="field">
-			<input class="input index-input" type="email" placeholder="Email">
+	<section class="section is-flex is-large is-centered index-section" id="sign-up">
+		<div class="container has-text-centered">
+			<h2 class="title is-2 index-title">Sign Up</h2>
+			<!-- Form -->
+			<form id="new-form">
+        <!-- Form - First Name -->
+				<div class="field">
+					<label><h4 class="title is-5 has-text-white">First Name</h4></label>
+					<p class="control has-icons-left">
+						<input id="first" class="input index-input" type="text" placeholder="Diana">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-user"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Last Name -->
+				<div class="field">
+					<label><h4 class="title is-5 has-text-white">Last Name</h4></label>
+					<p class="control has-icons-left">
+						<input id="last" class="input index-input" type="text" placeholder="Prince">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-user"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Email -->
+				<div class="field">
+          <label><h4 class="title is-5 has-text-white">Email</h4></label>
+					<p class="control has-icons-left">
+						<input id="email" class="input index-input" type="email" placeholder="diana@wonderwoman.com">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-envelope"></i>
+						</span>
+					  </p>
+        </div>
+        <!-- Form - Password -->
+				<div class="field">
+          <label><h4 class="title is-5 has-text-white">Password</h4></label>
+					<p class="control has-icons-left">
+						<input id="password" class="input index-input" type="password" placeholder="Password">
+						<span class="icon is-small is-left">
+						  <i class="fas fa-lock"></i>
+						</span>
+					  </p>
+				</div>
+					<button type="submit" class="button is-medium is-rounded index-btn">Submit</button>
+			</form>
 		</div>
-		<div class="field">
-			<input class="input index-input" type="password" placeholder="Password">
+	</section>
+
+  	<!--  Sign In Section -->
+  	<section class="section is-large is-flex is-centered index-section" id="sign-in">
+		<div class="container has-text-centered ">
+			<h2 class="title is-2 index-title">Sign In</h2>
+			<form id="new-form2">
+				<div class="field">
+					<input id="email2" class="input index-input" type="email" placeholder="Email">
+				</div>
+				<div class="field">
+					<input id="password2" class="input index-input" type="password" placeholder="Password">
+				</div>
+				<button type="submit" class="button is-medium is-rounded index-btn">Login</button>
+			</form>
 		</div>
+	</section>
 
-		<button class="button is-medium is-rounded index-btn">Login</button>
-
-		</div>
-	  </div>
-
-	<!-- Sign In Section -->
-	<div class="columns is-centered">
-		<div class="column is-half has-text-centered">
-		<h2 class="title is-2">Sign In</h2>
-		
-		<div class="field">
-			<p class="control has-icons-left has-icons-right">
-			  <input class="input index-input" type="email" placeholder="Email">
-			  <span class="icon is-small is-left">
-				<i class="fas fa-envelope"></i>
-			  </span>
-			  <span class="icon is-small is-right">
-				<i class="fas fa-check"></i>
-			  </span>
-			</p>
-		  </div>
-		  <div class="field">
-			<p class="control has-icons-left">
-			  <input class="input index-input" type="password" placeholder="Password">
-			  <span class="icon is-small is-left">
-				<i class="fas fa-lock"></i>
-			  </span>
-			</p>
-		  </div>
-			<button class="button is-medium is-rounded index-btn">Login</button>
-
-
-		  </div>
-		  </div>
-	</main>
 </body>
 </html>
