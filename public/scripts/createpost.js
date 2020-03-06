@@ -48,7 +48,6 @@ $(function() {
         let newPost = getPostTemplate(post);
         let postContainer = document.getElementById('post-container');
         postContainer.insertAdjacentHTML('afterbegin', newPost);
-
         //  EVENT LISTENER - EDIT/UPDATE  //
         const openUpdate = document.getElementById('open-update');
         const modalUpdate = document.getElementById('modal-update');
@@ -57,8 +56,6 @@ $(function() {
             modalUpdate.classList.remove('slideOutDown');
             modalUpdate.style.display = 'initial';
             postIdClick = event.target.dataset.id;
-            console.log(`UPDATE - #post-${postIdClick}`)
-           //postIdClick = '';
      });
        // EVENT LISTENER - DELETE  //
         const openDelete = document.getElementById('open-delete');
@@ -68,8 +65,6 @@ $(function() {
             modalDelete.classList.remove('fadeOut');
             modalDelete.style.display = 'initial';
             postIdClick = event.target.dataset.id;
-            console.log(`DELETE - #post-${postIdClick}`)
-           // postIdClick = '';
         });
     };
     // FN - RENDER ALL POSTS //
@@ -138,8 +133,6 @@ $(function() {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function(res) {
-                console.log(res.postTitle);
-
                 alert('yay you updated a post!');
             }
         });

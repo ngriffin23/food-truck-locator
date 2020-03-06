@@ -4,7 +4,6 @@ const postForm = document.getElementById('newPost')
 postForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    console.log('click')
     const title = document.getElementById('post-title');
     const date = document.getElementById('post-date');
     const truck = document.getElementById('post-truck');

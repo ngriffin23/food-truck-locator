@@ -75,28 +75,6 @@ openView.addEventListener('click', function(e){
     e.stopPropagation();
 });
 
-// MODALS - EDIT/UPDATE - OPEN //
-// function activateOpenUpdate () {
-//       if(openUpdate){
-//         openUpdate.addEventListener('click', function(){
-//         console.log(hello);
-//         modalUpdate.classList.add('slideInUp');
-//         modalUpdate.classList.remove('slideOutDown');
-//         modalUpdate.style.display = 'initial';
-//     });
-// } else {
-//     console.log('update button non-existent');
-//     }
-// } ;
-
-// MODALS - DELETE - OPEN //
-// openDelete.addEventListener('click', function(e){
-//     modalDelete.classList.add('fadeIn');
-//     modalDelete.classList.remove('fadeOut');
-//     modalDelete.style.display = 'initial';
-//     e.stopPropagation();
-// });
-
 /* ======= ======= ======= ======= ======= ======= ======= */
 
 // MODALS - DASH LINKS - CLOSE ICON + CANCEL BTN

@@ -23,11 +23,8 @@ const createPost = (req,res) => {
   })
 }
 const updatePost = (req,res) => {
-  console.log(req.body)
-console.log("beep")
     db.Post.findByIdAndUpdate(req.params.id, req.body, {new : true}, (err, updatedPost) => {
       if (err) return console.log(err);
-      console.log(req.body)
       res.json(updatedPost);
     })
 }
