@@ -24,10 +24,13 @@ const modalView = document.getElementById('modal-view');
 const modalUpdate = document.getElementById('modal-update');
 const modalSettings = document.getElementById('modal-settings');
 const modalDelete = document.getElementById('modal-delete');
+// const modalDelete = document.getElementById('modal-delete');
 // CLOSE/CANCEL BUTTONS
 const closeIcon = document.querySelector('.close-icon');
 const cancelBtn = document.getElementById('cancel-btn');
 const deleteCancel = document.getElementById('delete-cancel');
+const yesDelete = document.getElementById('yes-delete');
+const confirmUpdate = document.getElementById('confirm-update')
 /* ======= ======= ======= ======= ======= ======= ======= */
 
 /* ** EVENT LISTENERS  ** */
@@ -66,29 +69,11 @@ openSettings.addEventListener('click', function(e){
 });
 // MODALS - VIEW POSTS - OPEN //
 openView.addEventListener('click', function(e){
-    console.log(e)
     modalView.classList.add('slideInUp');
     modalView.classList.remove('slideOutDown');
     modalView.style.display = 'initial';
     e.stopPropagation();
 });
-// MODALS - EDIT/UPDATE - OPEN //
-openUpdate.addEventListener('click', function(e){
-    console.log(e)
-    modalUpdate.classList.add('slideInUp');
-    modalUpdate.classList.remove('slideOutDown');
-    modalUpdate.style.display = 'initial';
-});
-
-// MODALS - DELETE - OPEN //
-openDelete.addEventListener('click', function(e){
-    modalDelete.classList.add('fadeIn');
-    modalDelete.classList.remove('fadeOut');
-    modalDelete.style.display = 'initial';
-    e.stopPropagation();
-});
-
-
 
 /* ======= ======= ======= ======= ======= ======= ======= */
 
@@ -124,7 +109,6 @@ dashBtnArr.forEach(function(thisModalId){
      });
  });
  // CLOSE DELETE POST WARNING
-
  deleteArr.forEach(function(thisModal){
     thisModal.addEventListener('click', function(e){
         modalDelete.classList.add('fadeOut');
@@ -136,3 +120,23 @@ deleteCancel.addEventListener('click', function(){
     modalDelete.classList.add('fadeOut');
     modalDelete.style.display = "none";
  });
+ 
+ yesDelete.addEventListener('click', function(){
+    if(modalDelete.classList.contains('slideOutDown')){
+        modalDelete.classList.remove('slideOutDown');
+        modalDelete.classList.add('fadeOut');
+        modalDelete.style.display = "none";
+    }else{
+    modalDelete.classList.add('fadeOut');
+    modalDelete.style.display = "none";
+ }});
+
+ confirmUpdate.addEventListener('click', function(){
+    if(modalUpdate.classList.contains('slideOutDown')){
+        modalUpdate.classList.remove('slideOutDown');
+        modalUpdate.classList.add('slideOutDown');
+       // modalUpdate.style.display = "none";
+    }else{
+    modalUpdate.classList.add('slideOutDown');
+    modalUpdate.style.display = "none";
+ }});

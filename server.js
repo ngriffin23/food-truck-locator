@@ -33,6 +33,7 @@ app.use('/', routes.views);
 // api routes
 app.use('/api/v1', routes.api);
 
+
 // API Error 404
 app.use('/api/*', (req, res) => {
     res.status(404).json({status: 404, error: 'Error 404: Resource not found'});
@@ -42,6 +43,8 @@ app.use('/api/*', (req, res) => {
 app.use('*', (req, res) => {
     res.send('<h2>Error 404: Not Found</h2>');
   });
+
+
 
 // start the server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 

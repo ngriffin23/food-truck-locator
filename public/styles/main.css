@@ -2,6 +2,7 @@
 html {
 	background-image: url('https://i.imgur.com/n2sUAE4.png');
 	background-size: cover;
+	background-color: rgba(255, 255, 255, 0.5);
 	scroll-behavior: smooth;
 }
 
@@ -11,6 +12,17 @@ body {
 }
 section {
 	background-color: rgba(53,58,77,0.9);
+}
+#logo-container {
+	margin-bottom: 20px;
+}
+#logo-container span{
+	color: #F7AD62;
+	display: inherit;
+}
+#logo {
+	margin-top: -100px;
+ 	width: 10%;
 }
 
 /* ** INDEX/TITLE STYLES  **  */
@@ -65,6 +77,7 @@ section {
 	background-color: rgba(53,58,77,0.8);
 	color: crimson;
 	height: 100vh;
+	z-index: 33;
 }
 #dash-menu h3, span {
 	color: #fff;
@@ -85,6 +98,9 @@ section {
 	color: #333;
 	margin: 10px auto;
 }
+.dash-menu-open {
+	padding: 5px 10px;
+}
 span.dash-menu-open {
 	color:#fff;
 	font-size: 2em;
@@ -95,7 +111,10 @@ span.dash-menu-open {
  div.dash-menu-open {
 	margin: 5%; 
 	width: 200px;
-	padding: 5px 10px;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
 	border-radius: 10px;
 	background: crimson;
 	cursor: pointer;
@@ -123,7 +142,8 @@ span.dash-menu-close{
 
 /* * MODAL STYLES* */
 .modal-card {
-	margin: 7% auto;
+	margin: 0 auto;
+	z-index: 767;
 }
 
 .upload-btn {
@@ -131,6 +151,11 @@ span.dash-menu-close{
 	border: 2px solid #FF9665;
 	background: transparent;
 }
+#post-submit-btn {
+	color: #fff;
+	background-color: #fb6501e7;
+}
+
 #modal-update{
 	z-index: 777;
 }
@@ -147,6 +172,7 @@ span.dash-menu-close{
 }
 
 /* * MODAL- INPUT STYLES* */
+
 .modal-input {
 	font-family: 'Exo', Arial, sans-serif;
 	color: #333;
@@ -165,12 +191,13 @@ span.dash-menu-close{
 	font-family: 'Exo', Arial, sans-serif ;
 }
 /* * POST STYLES ** */
+
 .post-content {
 	background-color: rgba(53,58,77,0.8);
 }
 .post-card {
 	margin-top: 10px;
-	width: 50%;
+	width: 100%;
 	border: 2px solid #333;
 }
 .post-style {
@@ -182,8 +209,7 @@ span.dash-menu-close{
 	color: #333;
 }
 .post-footer {
-	display: flex;
-	justify-content: flex-end;
+	margin: 0 auto;
 	border: 0;
 	padding: 5px 2px;
 }
@@ -203,6 +229,27 @@ span.dash-menu-close{
 
 /* * MEDIA QUERIES  **  */
 @media screen and (max-width: 960px) {
+	#logo {
+		margin-top: 0;
+		width: 20%;
+	}
+	#logo-container {
+		margin-bottom: 5px;
+	}
+	#logo-text {
+		display: none;
+	}
+	.index-title {
+		font-size: 1.3em;
+	}
+
+	#index-title-text {
+		font-size: 1.8em;
+	}
+	#index-subtitle-text {
+		margin-top: 50px;
+		font-size: 1.3em;
+	}
 	.section {	
 		display: flex;
 		justify-content: center;
@@ -212,16 +259,24 @@ span.dash-menu-close{
 		width: 100%;
 	}
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 490px) {
+	#logo {
+		width: 25%;
+	}
+	#logo-container span {
+		color: #F7AD62;
+		display: none;
+	}
 	.modal-card {
 		margin: 0 auto;
+		height: 100vh;
 	}
 	.modal-content {
 		margin: 0;
 	}
 	.post-card {
 		width: 90%;
-		margin: 4% auto;
+		margin: 4% auto 0 auto;
 	}
 	.post-style {
 		padding: 15px;

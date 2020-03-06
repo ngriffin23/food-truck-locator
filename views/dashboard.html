@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Bite 'N Go - Welcome, {FIRSTNAME}!</title>
+    <title>Bite 'N Go - Welcome!</title>
+    <!-- MAPBOX -->
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
     <!-- FONTS/TYPEFACES -->
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+   <!-- CSS -->
     <link rel="stylesheet" href="/styles/animate.css">
-	  <link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/bulma.css" />
+    <link rel="stylesheet" href="/styles/map.css">
     <link rel="stylesheet" href="/styles/main.css" />
+    <!-- JS -->
     <script defer src="https://kit.fontawesome.com/f0d5d78b63.js" crossorigin="anonymous"></script>
+    <script defer src="/scripts/jquery.js"></script>
+    <script defer src="/scripts/createpost.js"></script>
     <script defer src="/scripts/interaction.js"></script>
+    <script defer src="/scripts/map.js"></script>
     <script defer src="/scripts/userProfile.js"></script>
-
 </head>
 <body>
     <!-- DASHBOARD - MENU -->
-    <div class="dash-menu-open is-centered has-text-centered">
+    <div class="dash-menu-open is-pulled-right has-text-centered">
         <span class="dash-menu-open is-centered">Menu</span>
     </div>
-
     <aside class="menu section is-overlay is-medium is-centered has-text-centered animated" id="dash-menu">
         <div class="container">
-            <h3 class="title is-3">Hello, {FIRSTNAME}!</h3>
+            <h3 class="title is-3">Hello!</h3>
             <a class="button is-medium is-rounded dash-btn open-this"  id="find-food-truck">Find Food Truck</a>
             <a class="button is-medium is-rounded dash-btn open-this"  id="open-create">Create Posts</a>
             <a class="button is-medium is-rounded dash-btn open-this"  id="open-view">View Posts</a>
@@ -33,16 +38,23 @@
             <span class="icon is-large dash-menu-close"><i class="fas fa-2x fa-chevron-left"></i></span>
         </div>
     </aside>
-
+   <!-- MAP BOX -->
+   <div class='sidebar'>
+        <div class='heading'>
+            <h1>SF Food Trucks</h1>
+        </div>
+        <div id='listings' class='listings'></div>
+        </div>
+        <div id='map' class='map'> 
+  </div>   
     <!-- DASHBOARD - MODAL - DELETE -->
     <div class="modal has-text-centered is-centered animated" id="modal-delete">
       <div class="container is-centered">
         <h2 class="title is-2 is-centered ">Are you sure you want to delete this post?</h2>
-        <button class="button is-danger">Yes! Delete!</button>
+        <button class="button is-danger" id="yes-delete">Yes! Delete!</button>
         <button class="button delete-btn" id="delete-cancel">Cancel</button>
       </div>
     </div>
-
     <!-- DASHBOARD - MODAL - CREATE  -->
     <div class="modal animated" id="modal-create">
             <div class="modal-card">
@@ -53,28 +65,27 @@
                 <section class="modal-card-body has-text-centered">
                     <form id="newPost">    
                       <div>
-                      <input id="title" class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
+                      <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
                       </div>
                       <div>
-                      <input id="date" class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
+                      <input class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
                       </div>
                       <div>
-                      <input id="truck" class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
+                      <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
                       </div>
                       <div>
-                      <input id="meal" class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
+                      <input class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
                       </div>
-                      <textarea id="body" class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                      <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" id="post-body" rows="5"></textarea>
                 </section>
                 <form class="modal-card-foot">
-                <button type="submit" class="button is-success">Post</button>
+                <button type="submit" class="button" id="post-submit-btn">Post</button>
                 <button type="submit" class="button close-icon" id="cancel-btn">Cancel</button>
                 </form>
             </form>
             </footer> 
         </div>
     </div>
- 
     <!-- DASHBOARD - MODAL - UPDATE  -->
     <div class="modal animated" id="modal-update">
         <div class="modal-card">
@@ -83,19 +94,18 @@
                 <button class="delete update-close" aria-label="close" id="update-cancel-btn"></button>
             </header>
             <section class="modal-card-body has-text-centered">
-                <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="post-title" />
-                <input class="input is-medium modal-input" type="text" placeholder="Date" id="post-date" />
-                <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="post-truck" />
-                <input class="input is-medium modal-input" type="text" placeholder="Meal" id="post-meal" />
-                <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" rows="5"></textarea>
+                <input class="input is-medium modal-input" type="text" placeholder="Post Title" id="update-post-title" />
+                <input class="input is-medium modal-input" type="text" placeholder="Date" id="update-post-date" />
+                <input class="input is-medium modal-input" type="text" placeholder="Food Truck" id="update-post-truck" />
+                <input class="input is-medium modal-input" type="text" placeholder="Meal" id="update-post-meal" />
+                <textarea class="textarea modal-textarea" placeholder="So...how was the meal?" id="update-post-body" rows="5"></textarea>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Update</button>
+                <button class="button is-success" id="confirm-update" >Update</button>
                 <button class="button update-close" id="update-cancel-btn">Cancel</button>
             </footer> 
         </div>
     </div>
-
      <!-- DASHBOARD - SETTINGS -->
      <div class="modal animated" id="modal-settings">
          <div class="modal-card">
@@ -116,7 +126,6 @@
             </footer> 
          </div>
     </div>
-
     <!-- DASHBOARD VIEW POSTS -->
     <div class="modal is-centered animated" id="modal-view">
         <div class="modal-card is-centered">
@@ -125,56 +134,9 @@
                 <p class="modal-card-title">Posts</p>
                 <button class="delete close-icon" aria-label="close"></button>
             </header>
-            <!-- POSTS-->
-            <div class="modal-content post-content">
-              <!-- SAMPLE POST 1-->
-              <div class="tile card post-card">
-                  <div class="card-content post-style">
-                      <!-- POST TITLE -->
-                      <p class="title is-4 post-title">Hella BOMB Burrito.</p>
-                      <!-- POST DATE -->
-                      <p class="subtitle is-6 post-date"><time datetime="2020-1-31">03:01 PM - 31 Jan 2020</time></p>
-                      <!-- POST TRUCK -->
-                      <p class="subtitle is-6">      
-                          <span class="icon is-small">
-                              <i class="fas fa-map-marker-alt"></i>
-                          </span> 
-                          <span class="post-meal">Señor Sisig</span>
-                      </p>
-                      <!-- POST MEAL -->
-                      <p class="subtitle is-6">
-                          <span class="icon is-small">
-                              <i class="fas fa-utensils"></i>
-                          </span>		
-                          <span class="post-meal"> California Tosilog Burrito w/ Ube tortilla and extra egg</span>
-                      </p>
-                      <!-- POST Details -->
-                      <p class="post-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                          Odit libero velit consectetur nobis labore.
-                          Quas, libero? Recusandae excepturi, asperiores 
-                          numquam id temporibus natus a, vel earum ab quas, voluptatem facere.
-                      </p>
-                 
-                  <footer class="card-footer post-footer">
-                      <div class="post-footer-container">
-                          <button class="button edit-btn post-btn open-this" id="open-update">
-                              <span class="icon">
-                                  <i class="fas fa-edit"></i>
-                              </span>
-                          </button>
-                          <button class="button post-btn open-this" id="open-delete" >
-                              <span class="icon">
-                                  <i class="fas fa-trash-alt"></i>
-                              </span>
-                          </button>
-                      </div>
-                  </footer> 
-                </div>
-              </div>
-              <!-- END SAMPLE POST 1-->
-        </div> 
+            <!-- POSTS -->
+            <div class="modal-content post-content" id="post-container">
+            </div>
     </div>
-
 </body>
 </html>

@@ -4,7 +4,6 @@ loginForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-    console.log('beep')
     let formIsValid = false;
 
 //   // Select Inputs
