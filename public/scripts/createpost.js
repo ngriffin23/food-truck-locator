@@ -84,7 +84,6 @@ $(function() {
     // AJAX - CREATE POST //
     $('#newPost').on('submit', function(event){
        
-        $('#modal-create').addClass('slideOutDown');
         event.preventDefault();
         let newPostTitle = $('#post-title');
         let newDate = $('#post-date');
@@ -110,6 +109,7 @@ $(function() {
                 newMeal.val('');
                 newBody.val('');
                 alert('yay you created a post!');
+            $('#modal-create').addClass('slideOutDown');
             }
         })
     });
@@ -133,6 +133,7 @@ $(function() {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function(res) {
+    
                 alert('yay you updated a post!');
             }
         });
@@ -147,6 +148,7 @@ $(function() {
             success: function(res) {
                 $('div').remove(`#post-${postIdClick}`);
                 alert(`Post ${postIdClick} DESTROYED.`);
+                postIdClick = '';
             },
         });
       }

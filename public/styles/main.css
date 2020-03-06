@@ -1,7 +1,7 @@
 /* ** GLOBAL STYLES  **  */
 html {
-	/* background-image: url('https://i.imgur.com/n2sUAE4.png');
-	background-size: cover; */
+	background-image: url('https://i.imgur.com/n2sUAE4.png');
+	background-size: cover;
 	background-color: rgba(255, 255, 255, 0.5);
 	scroll-behavior: smooth;
 }
@@ -12,6 +12,16 @@ body {
 }
 section {
 	background-color: rgba(53,58,77,0.9);
+}
+#logo-container {
+	margin-bottom: 20px;
+}
+#logo-container span{
+	color: #F7AD62;
+	display: inherit;
+}
+#logo {
+ width: 20%;
 }
 
 /* ** INDEX/TITLE STYLES  **  */
@@ -214,6 +224,23 @@ span.dash-menu-close{
 
 /* * MEDIA QUERIES  **  */
 @media screen and (max-width: 960px) {
+	#logo-container {
+		margin-bottom: 5px;
+	}
+	#logo-text {
+		display: none;
+	}
+	.index-title {
+		font-size: 1.3em;
+	}
+
+	#index-title-text {
+		font-size: 1.8em;
+	}
+	#index-subtitle-text {
+		margin-top: 50px;
+		font-size: 1.3em;
+	}
 	.section {	
 		display: flex;
 		justify-content: center;
@@ -224,7 +251,10 @@ span.dash-menu-close{
 	}
 }
 @media screen and (max-width: 490px) {
-
+	#logo-container span {
+		color: #F7AD62;
+		display: none;
+	}
 	.modal-card {
 		margin: 0 auto;
 		height: 100vh;
