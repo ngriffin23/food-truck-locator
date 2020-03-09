@@ -1,6 +1,5 @@
 # Bite 'N Go
-​
-Users are able to write posts about different food trucks they visit.
+​Users are able to see food trucks in San Francisco and write posts about different food trucks they visit.​ [Test our app](https://bitengo.herokuapp.com/)
 ​
 ## Technologies Used
 [Node](https://nodejs.org/en/)
